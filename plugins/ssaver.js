@@ -125,8 +125,8 @@ smd(
   async (m) => {
     try {
       await m.send(
-        "https://d.uguu.se/BBuWwwkQ.jpg",
-        { caption: "*Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ìʂ ҟìղց 👑🌍*" },
+        "https://files.catbox.moe/d9xukz.jpg",
+        { caption: "*-X-:bot dey play*" },
         "img",
         m
       );
@@ -146,8 +146,8 @@ smd(
   async (m) => {
     try {
       await m.send(
-        "https://i.imgur.com/DeJiOrr.jpeg",
-        { caption: "*Support QUEEN PLATINUM-V1 OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 8078144253 Name: ADENIKE AYOADE MARY Nigeria Show Love*" },
+        "https://files.catbox.moe/d9xukz.jpg",
+        { caption: "*Support -X-:bot OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 9133354644 Name: David promise Nigeria Show Love*" },
         "img",
         m
       );
@@ -157,15 +157,15 @@ smd(
   }
 );
  smd({
-  cmdname: "lili",
+  cmdname: "davex",
   desc: "Send a video to Luna",
   type: "fun",
   react: "🎥",
   filename: __filename,
 },
 async (m) => {
-  const videoUrl = "https://imgur.com/a/xrA7HLY";
-  const caption = "🎀🌈✿lili✿🎀🌈!";
+  const videoUrl = "https://files.catbox.moe/vq314f.jpg";
+  const caption = "what did you expect 😂";
 
   try {
     await m.sendMessage(m.from, {
@@ -179,15 +179,15 @@ async (m) => {
 });
 smd(
   {
-    cmdname: "lili2",
+    cmdname: "specialt",
     desc: "Send a video to Luna",
     type: "fun",
     react: "🎥",
     filename: __filename,
   },
   async (m) => {
-    const videoUrl = "https://imgur.com/a/Ocms7h5"; // Updated URL
-    const caption = "🎀🌈✿lili✿🎀🌈! Do you like it?"; // Updated caption
+    const videoUrl = "https://i.imgur.com/KNWskFJ.mp4"; // Updated URL
+    const caption = "for my guys 🌚! Do you like it?"; // Updated caption
 
     try {
       await m.sendMessage(m.from, {
@@ -211,7 +211,7 @@ smd(
   async (m) => {
     try {
       await m.send(
-        "https://f.uguu.se/XHBGlVhK.jpg", // The image URL
+        "https://files.catbox.moe/vq314f.jpg", // The image URL
         { caption: "*Why are you gay?*" }, // The caption
         "img", // The message type
         m // The message object
@@ -229,8 +229,8 @@ smd(
     filename: __filename,
   },
   async (m) => {
-    const videoUrl = "https://imgur.com/a/Ocms7h5"; // Updated URL
-    const caption = "🎀🌈✿lili✿🎀🌈! Do you like it?"; // Updated caption
+    const videoUrl = "https://i.imgur.com/KNWskFJ.mp4"; // Updated URL
+    const caption = "last time sha! Do you like it?"; // Updated caption
 
     try {
       await m.sendMessage(m.from, {
@@ -245,8 +245,8 @@ smd(
 );
 smd(
   {
-    cmdname: "theking",
-    desc: "Sends an image with the caption 'Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ìʂ ҟìղց 👑🌍'",
+    cmdname: "foru",
+    desc: "Sends an image with the caption *This one is for my bby🥹, you know yourself sweetheart'",
     react: "👑",
     type: "misc",
     filename: __filename,
@@ -254,13 +254,13 @@ smd(
   async (m) => {
     try {
       await m.send(
-        "https://d.uguu.se/BBuWwwkQ.jpg", // The image URL
-        { caption: "*Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ìʂ ҟìղց 👑🌍*" }, // The caption
+        "https://i.imgur.com/7psUg8z.jpeg", // The image URL
+        { caption: "*IT IS I ☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐*" }, // The caption
         "img", // The message type
         m // The message object
       );
     } catch (e) {
-      m.error(`${e}\n\nCommand: theking`, e, false);
+      m.error(`${e}\n\nCommand: foru`, e, false);
     }
   }
 );
