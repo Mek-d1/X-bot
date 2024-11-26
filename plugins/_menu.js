@@ -57,14 +57,14 @@ function sleep(ms) {
 astro_patch.smd({
   'cmdname': "menu",
   'desc': "Displays a stylish, readable command list",
-  'react': '🎨',
+  'react': '🤔',
   'type': 'user',
   'filename': __filename
 }, async (context, message) => {
   try {
     // Display loading messages
     const loadingMessages = [
-      "🔄 Gathering your commands, please wait..."];
+      "Well damn The comands has to be gathered somehow right? ▶️"];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
       await sleep(1000); // Wait for 1 second between messages
@@ -119,7 +119,7 @@ astro_patch.smd({
     }
 
     menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your companion\n`;
-    menuContent += `©2024 *JUPITERBOLD05*\n`;
+    menuContent += `© *-X-*\n`;
     menuContent += `${readmore}`;
 
     // Box the menu content
@@ -132,8 +132,8 @@ astro_patch.smd({
         'forwardingScore': 100, 
         'isForwarded': true,
         'externalAdReply': {
-          'title': 'Pʟᴀᴛɪɴᴜᴍ-V1',
-          'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515'
+          'title': '-X-:bot',
+          'sourceUrl': 'https://whatsapp.com/channel/0029VarIiQL5a24AU5ZCVV0G'
         }
       },
       'ephemeralExpiration': 3000
