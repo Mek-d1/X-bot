@@ -58,7 +58,7 @@ const path = require ("path");
 *Followers:* ${followers}
 *Description:* ${description || "No description provided"}
 
-\t*Platinum-V1 WA STALKER*
+\t*-X-:bot WA STALKER*
 `;
 
       await m.bot.sendFromUrl(m.from, img, caption, m, {}, "image");
@@ -112,7 +112,7 @@ smd(
 *Followers:* ${followers}
 *Following:* ${following}
 
-\t*Platinum-V1 IG STALKER*
+\t*-X-:bot IG STALKER*
 `;
 
       await m.send(caption);
@@ -171,7 +171,7 @@ smd(
 *Account Created:* ${created_at}
 *Last Updated:* ${updated_at}
 
-\t*Platinum-V1 GitHub STALKER*
+\t*-X-:bot GitHub STALKER*
 `;
 
       await m.bot.sendFromUrl(m.from, profile_pic, caption, m, {}, "image");
@@ -557,7 +557,7 @@ smd(
 
       if (!repoUrl) {
         return await _0x1ae8f8.reply(
-          "*Provide Repo URL, e.g., .git https:/Jupiterbold05/github.com//Platinum-V1_*"
+          "*Provide Repo URL, e.g., .git https:/Mek-d1/github.com//Platinum-V1_*"
         );
       }
 
@@ -608,7 +608,7 @@ smd(
    desc: "text to speech.",
    category: "downloader",
    filename: __filename,
-   use: "<Hii,this is platinum-v1>"
+   use: "<Hii,this is X-bot>"
  }, async (_0x55aba2, _0x56da6b) => {
    try {
      let _0x204f81 = _0x55aba2.reply_text ? _0x55aba2.reply_text : _0x56da6b;
@@ -691,10 +691,10 @@ smd(
 smd({
   pattern: "tiktokvid", // Command name remains 'fb'
   alias: ["tkdlvid"],
-  desc: "Downloads video from a Facebook link.",
+  desc: "Downloads video from a Tiktok link.",
   category: "downloader",
   filename: __filename,
-  use: "<Facebook video URL>"
+  use: "<Tiktok video URL>"
 }, async (_0x2c2023, _0x4ec99f) => {
   try {
     if (!_0x4ec99f) {
