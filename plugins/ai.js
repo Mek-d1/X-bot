@@ -149,7 +149,7 @@ smd({
       await m.bot.sendFromUrl(
         m.from,
         photoUrl,
-        "*Made by Pʟᴀᴛɪɴᴜᴍ-V1*:",
+        "*Made by -X-:bot*:",
         m,
         {},
         "image"
@@ -222,7 +222,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Made by Pʟᴀᴛɪɴᴜᴍ-V1*:",
+          "*Made by -X-:bot*:",
           m,
           {},
           "image"
@@ -243,7 +243,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Made by Pʟᴀᴛɪɴᴜᴍ-V1*:",
+          "*Made by -X-:bot*:",
           m,
           {},
           "image"
@@ -472,7 +472,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Made by Pʟᴀᴛɪɴᴜᴍ-V1*:",
+          "*Made by -X-:bot*:",
           m,
           {},
           "image"
@@ -493,7 +493,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Made by Pʟᴀᴛɪɴᴜᴍ-V1*:",
+          "*Made by -X-:bot*:",
           m,
           {},
           "image"
@@ -515,7 +515,7 @@ smd(
       alias: ["recognition", "anonychat"],
       desc: "Send message Annonymously",
       category: "ai",
-      use: "<Hii, Astro>",
+      use: "<Hii, Mek>",
       filename: __filename,
     },
     async (_0x358984, _0x20693a, { smd: _0x12d243 }) => {
@@ -525,7 +525,7 @@ smd(
           return await _0x358984.send(
             "*provide number with msg to send Anonymously.* \n*Example " +
               (prefix + _0x12d243) +
-              " 2348039607375,your_Message*",
+              " 2347013349642,your_Message*",
             {},
             "",
             _0x358984
@@ -559,7 +559,7 @@ smd(
           _0x3079e2.msgStatus = true;
           _0x3079e2.senderMsg = _0x358984;
           _0x5f656f =
-            "*PLATINUM-V1ᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
+            "*-X-:bot • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
             _0x3079e2.id +
             "\n*Date:* _" +
             _0xbcd286 +
@@ -603,7 +603,7 @@ smd(
           }
           if (
             _0x2acf30.reply_text.includes("PLATINUM-V1• ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
-            _0x2dfb59[0].includes("PLATINUM-V1 • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
+            _0x2dfb59[0].includes("-X-:bot • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
             _0x2dfb59[2].includes("Msg_Id")
           ) {
             let _0x1b0d01 = "" + _0x2dfb59[2].replace("*Msg_Id:* ", "").trim();
