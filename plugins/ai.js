@@ -12,9 +12,9 @@ const { send } = require("../lib");
 const fetch = require("node-fetch");
 smd(
   {
-    pattern: "gpt",
-    react: "🤖",
-    desc: "Get a response from Bing AI based on user query.",
+    pattern: "design",
+    react: "🙂",
+    desc: "generate an image based on user text .",
     category: "ai",
     filename: __filename,
   },
@@ -30,7 +30,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://widipe.com/gpt4?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://www.samirxpikachu.run.place/ArcticFL?prompt=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
