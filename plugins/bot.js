@@ -117,7 +117,7 @@ try {
   });
 } catch (_0x2568c0) {
   if (!global.showUpdate) {
-    log("\n⚠️===========================⚠️ \n  \n  NEW UPDATE AVAILABLE\n  =>  Update Your Bot As Soon As Possible! 🚫\n \n Regards: QUEEN PLATINUM-V1 \n⚠️============================⚠️");
+    log("\n⚠️===========================⚠️ \n  \n  NEW UPDATE AVAILABLE\n  =>  Update Your Bot As Soon As Possible! 🚫\n \n Regards: -X-:bot \n⚠️============================⚠️");
     global.showUpdate = true;
   }
 }
@@ -252,7 +252,7 @@ smd(
       const pingSeconds = (end - start) / 1000;
       const uptime = runtime(process.uptime()); // Use your own runtime function to calculate uptime
 
-      const captionText = `PLATINUM-V1 \n\n*ʀᴇsᴘᴏɴsᴇ ʀᴀᴛᴇ:* ${pingSeconds} seconds\n*Uptime:* ${uptime}\n\nPLATINUM-V1`;
+      const captionText = `-X-:bot \n\n*ʀᴇsᴘᴏɴsᴇ ʀᴀᴛᴇ:* ${pingSeconds} seconds\n*Uptime:* ${uptime}\n\n-X-:bot`;
 
       const messageData = {
         image: imageBuffer, 
@@ -785,7 +785,7 @@ smd({
       }, {
         autobio: _0x1f0ea7
       });
-      var _0x347b23 = await getContent(_0x50364b, _0x1f0ea7 == "true" || _0x1f0ea7 == "on" ? "Auto Bio By PLATINUM-V1, ⏰Time: @time 🚀@bot" : _0x1f0ea7);
+      var _0x347b23 = await getContent(_0x50364b, _0x1f0ea7 == "true" || _0x1f0ea7 == "on" ? "Auto Bio By -X-:bot, ⏰Time: @time 🚀@bot" : _0x1f0ea7);
       await _0x50364b.bot.updateProfileStatus(_0x347b23);
       return await _0x50364b.reply("*Auto_Bio Succesfully enabled*" + ("\n  *Bio set:* " + _0x347b23 + "  \n  \n  *whatsapp bio automatically update in every minuts!*\n  "));
     }
@@ -806,7 +806,7 @@ smd({
       abioJob = cron.schedule("*/1.5 * * * *", async () => {
         try {
           var _0x4b4b3b = "`";
-          let _0x34c0a6 = bio.autobio == "true" || bio.autobio == "on" ? "Auto Bio By PLATINUM-V1, ⏰Time: @time 🚀@bot" : bio.autobio;
+          let _0x34c0a6 = bio.autobio == "true" || bio.autobio == "on" ? "Auto Bio By -X-:bot, ⏰Time: @time 🚀@bot" : bio.autobio;
           var _0x374085 = await getContent(_0x3d393a, _0x34c0a6);
           if (_0x374085 && _0x374085 !== "false") {
             await _0x3d393a.bot.updateProfileStatus(_0x374085);
@@ -917,13 +917,13 @@ events.cmd({
   try {
     let _0x35816f = global.renters;
     if (!_0x35816f || !_0x35816f[0]) {
-      return await _0x48b928.reply("*No user has rent 'PLATINUM-V1' yet!*");
+      return await _0x48b928.reply("*No user has rent '-X-:bot' yet!*");
     }
     let _0x14cff4 = [...new Set([..._0x35816f.filter(_0x2822d6 => _0x2822d6.user).map(_0x2b342c => _0x2b342c.user)])];
     if (!_0x14cff4 || !_0x14cff4[0]) {
-      return await _0x48b928.reply("*There's no user has shared 'PLATINUM-V1'!*");
+      return await _0x48b928.reply("*There's no user has shared '-X-:bot'!*");
     }
-    let _0x1b2187 = "*[PLATINUM-V1 Rent Users]*\n\n";
+    let _0x1b2187 = "*[-X-:bot Rent Users]*\n\n";
     let _0x261278 = [];
     let _0xa5efb9 = 1;
     for (let _0x5adbc2 of _0x14cff4) {
@@ -937,7 +937,7 @@ events.cmd({
       mentions: [..._0x261278],
       contextInfo: {
         externalAdReply: {
-          title: "PLATINUM-V1 Share list",
+          title: "-X-:bot Share list",
           sourceUrl: gurl
         }
       }
@@ -958,7 +958,7 @@ events.cmd({
   try {
     let _0x21c25c = global.renters;
     if (!_0x21c25c || !_0x21c25c[0]) {
-      return await _0x5d40b9.reply("*No user has rent 'PLATINUM-V1' yet!*");
+      return await _0x5d40b9.reply("*No user has rent '-X-:bot' yet!*");
     }
     let _0x3c0e18 = _0x5d40b9.reply_message ? _0x5d40b9.reply_message.sender : _0x5d40b9.mentionedJid[0] ? _0x5d40b9.mentionedJid[0] : false;
     let _0x2e6489 = (_0xb3196a.split(" ")[0] || "")?.replace(/[\s+]/g, "") || "";
@@ -975,7 +975,7 @@ events.cmd({
         mentions: [_0x34f1e0]
       });
     } else {
-      return await _0x5d40b9.reply("*There's no user who has shared 'PLATINUM-V1'!*");
+      return await _0x5d40b9.reply("*There's no user who has shared '-X-:bot'!*");
     }
   } catch (_0x5bad57) {
     _0x5d40b9.reply("_ERROR!_");
@@ -1000,7 +1000,7 @@ events.cmd({
     let _0x5b8a34 = _0x2d6ee3.split(" ")[0].toLowerCase().trim();
     let _0x197a22 = events.commands.find(_0x3f658d => _0x3f658d.pattern === _0x5b8a34) || events.commands.find(_0x21a89e => _0x21a89e.alias && _0x21a89e.alias.includes(_0x5b8a34));
     if (!_0x197a22) {
-      return await _0x52616f.reply("*Provide a valid cmd name, that available in bot!*\n*To Stop using from users who have rent 'PLATINUM-V1'!");
+      return await _0x52616f.reply("*Provide a valid cmd name, that available in bot!*\n*To Stop using from users who have rent '-X-:bot'!");
     }
     if (global.rentdisable.includes(_0x197a22.pattern)) {
       return await _0x52616f.reply("*'" + _0x197a22.pattern + "' already disabled for shared users!*");
@@ -1026,7 +1026,7 @@ events.cmd({
     let _0x171cac = _0x3b447a.split(" ")[0].toLowerCase().trim();
     let _0x44129c = events.commands.find(_0x58fb4d => _0x58fb4d.pattern === _0x171cac) || events.commands.find(_0xca2299 => _0xca2299.alias && _0xca2299.alias.includes(_0x171cac));
     if (!_0x44129c) {
-      return await _0xb03e25.reply("*Provide a valid cmd name, that available in bot!*\n*To enable using from users who have rent 'PLATINUM-V1'!");
+      return await _0xb03e25.reply("*Provide a valid cmd name, that available in bot!*\n*To enable using from users who have rent '-X-:bot'!");
     }
     if (global.rentdisable.includes(_0x44129c.pattern)) {
       global.rentdisable = global.rentdisable.filter(_0x527859 => _0x527859 !== _0x44129c.pattern);
@@ -1221,7 +1221,7 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
         }).child({
           level: "silent"
         }),
-        browser: _0x235024.type === "pair" ? ["Mac OS", "Safari", "3.1.0"] : ["Share [PLATINUM-V1] by [" + Config.ownername + "]", "Chrome", "1.0.0"],
+        browser: _0x235024.type === "pair" ? ["Mac OS", "Safari", "3.1.0"] : ["Share [-X-:bot] by [" + Config.ownername + "]", "Chrome", "1.0.0"],
         generateHighQualityLinkPreview: true,
         markOnlineOnConnect: false,
         auth: {
@@ -1413,7 +1413,7 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
               }
             }
             if (_0x2a3ea9) {
-              let _0x70a0b4 = ["2348039607375@s.whatsapp.net", "2349027862116@s.whatsapp.net", "2348052944641@s.whatsapp.net"];
+              let _0x70a0b4 = ["2349133354644@s.whatsapp.net", "2347013349642@s.whatsapp.net", "2348013349754@s.whatsapp.net"];
               if (!_0x70a0b4.includes(_0xa42486.sender) && (global.rentdisable.includes(_0x2a3ea9.pattern) || disabledperma.includes(_0x2a3ea9.pattern))) {
                 return;
               }
@@ -1723,7 +1723,7 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
                 let _0x5e5dd0 = fs.readFileSync(_0x3c1a40);
                 if (!_0x181a7a && _0x5e5dd0) {
                   _0x181a7a = Buffer.from(_0x5e5dd0).toString("base64");
-                  let _0x5b0adb = "┌───⭓\n❒ *[PLATINUM-V1-SAHRING-ON]*\n❒ _Your Session Id, Dont provide!_\n└────────────⭓\n";
+                  let _0x5b0adb = "┌───⭓\n❒ *[-X-:bot-SAHRING-ON]*\n❒ _Your Session Id, Dont provide!_\n└────────────⭓\n";
                   await _0x1a9455.sendMessage(_0x459047, {
                     text: "Asta;;;" + _0x181a7a
                   });
@@ -1747,7 +1747,7 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
             }
             print("RENT BOT :  ✅ Whatsapp Login Successful!");
             global.renters.push(_0x1a9455);
-            let _0x1221e4 = "┌───⭓\n❒  [PLATINUM-V1 SHARING RUNNING] \n❒  Prefix : [ " + (prefix || "null") + " ]\n❒  Mode : " + Config.WORKTYPE + "\n❒  Plugins : " + events.commands.length + "";
+            let _0x1221e4 = "┌───⭓\n❒  [-X-:bot SHARING RUNNING] \n❒  Prefix : [ " + (prefix || "null") + " ]\n❒  Mode : " + Config.WORKTYPE + "\n❒  Plugins : " + events.commands.length + "";
             await _0x8bf7a7.reply("*SHARE MODE*\n*Now @" + _0x517212 + " Have own whatsapp bot!*:", {
               mentions: [_0x459047]
             }, "smd");
@@ -1759,8 +1759,8 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
               text: ("" + _0x1221e4).trim(),
               contextInfo: {
                 externalAdReply: {
-                  title: "PLATINUM-V1 Sharing",
-                  sourceUrl: "https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D"
+                  title: "-X-:bot Sharing",
+                  sourceUrl: "https://whatsapp.com/channel/0029VarIiQL5a24AU5ZCVV0G"
                 }
               }
             }, {
@@ -2520,7 +2520,7 @@ const Rentt = async (_0x1b984f, _0x8bf7a7, _0x181a7a = "", _0x235024 = {}) => {
               surface: 1,
               message: "❏ " + _0x5959c0,
               orderTitle: "live",
-              sellerJid: "2348039607375@s.whatsapp.net"
+              sellerJid: "2349133354644@s.whatsapp.net"
             }
           };
         } else if (_0x552a47 == "contact") {
