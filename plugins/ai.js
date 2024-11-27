@@ -11,14 +11,12 @@ const axios = require("axios");
 const { send } = require("../lib");
 const fetch = require("node-fetch");
 smd(
-  {
-    pattern: "design",
-    react: "🙂",
-    desc: "generate an image based on user text .",
-    category: "ai",
-    filename: __filename,
-  },
-  async (m) => {
+  
+  module.exports = async (context) => {
+    const { client, m, text, botname } = context;
+
+    if (!text) return m.reply("Provide a text");
+
     try {
         
         const response = await fetch(`https://www.samirxpikachu.run.place/ArcticFL?prompt=${text}`);
