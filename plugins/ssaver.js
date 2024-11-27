@@ -126,7 +126,7 @@ smd(
     try {
       await m.send(
         "https://i.imgur.com/XkoFoW1.jpeg",
-        { caption: "*I'M HIM 😂, OF YOU DON'T AGREE THEN GO FUCK YOURSELF (☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐☠)*" },
+        { caption: "*I'M HIM 😂, IF YOU DON'T AGREE THEN GO FUCK YOURSELF (☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐☠)*" },
         "img",
         m
       );
