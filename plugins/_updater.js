@@ -46,7 +46,7 @@ try {
         let commits = await DB.syncgit();
         if (commits.total === 0)
           return await citel.reply(
-            `*PLATINUM-V1 IS RUNNING ON LATEST\nPATCHES\nFIXES\UPGRADES*`
+            `*-X-:bot IS RUNNING ON LATEST\nPATCHES\nFIXES\UPGRADES*`
           );
         let update = await DB.sync();
         await citel.bot.sendMessage(
