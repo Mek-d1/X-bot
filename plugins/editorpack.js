@@ -38,7 +38,8 @@ async function photoEditor(_0x17796b, _0x343213 = "ad", _0xf62b7f = "", _0xe1eb4
     } catch (_0x408f7d) {}
     return await _0x17796b.bot.sendMessage(_0x17796b.chat, {
       image: {
-        url: "https://api.popcat.xyz/" + _0x343213 + "?image=" + _0x9a4084
+        url: "https://api-service.vanceai.com/web_api/v1/upload=/" + _0x343213 + "?image=" + _0x9a4084
+  - "api_token=e1a210c59a391db213ac3f4d7c04f0cc"
       },
       caption: _0xf62b7f
     }, {
