@@ -8,10 +8,10 @@ global.port = process.env.PORT;
 global.appUrl = process.env.APP_URL || "";
 global.email = "davidpromise2003@gmail.com";
 global.location = "Lagos, Nigeria";
-global.mongodb = process.env.MONGODB_URI || "mongodb+srv://Mek-d1:Mek-d1@cluster0.lmwnxdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+global.mongodb = process.env.MONGODB_URI || "mongodb+srv://mohsin:mohsin@cluster0.iauaztt.mongodb.net/?retryWrites=true&w=majority";
 global.allowJids = process.env.ALLOW_JID || "null";
 global.blockJids = process.env.BLOCK_JID || "null";
-global.DATABASE_URL = process.env.DATABASE_URL || "";
+global.DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://mohsin:mohsin@cluster0.iauaztt.mongodb.net/?retryWrites=true&w=majority";
 global.timezone = process.env.TZ || process.env.TIME_ZONE || "Africa/Lagos";
 global.github = process.env.GITHUB || "https://github.com/Mek-d1/Platinum-V1";
 global.gurl = process.env.GURL || "https://whatsapp.com/channel/0029VarIiQL5a24AU5ZCVV0G";
@@ -22,7 +22,7 @@ global.sudo = process.env.SUDO || "2349133354644";
 global.owner = process.env.OWNER_NUMBER || "2349133354644";
 global.style = process.env.STYLE || "3";
 global.gdbye = process.env.GOODBYE || "false";
-global.wlcm = process.env.WELCOME || "true";
+global.wlcm = process.env.WELCOME || "false";
 global.warncount = process.env.WARN_COUNT || 3;
 global.disablepm = process.env.DISABLE_PM || "false";
 global.disablegroup = process.env.DISABLE_GROUPS || "false",
@@ -48,7 +48,7 @@ module.exports = {
   HANDLERS: process.env.PREFIX || ".",
   BRANCH: process.env.BRANCH || "main",
   VERSION: process.env.VERSION || "1.0.0",
-  caption: process.env.CAPTION || "©-X-",
+  caption: process.env.CAPTION || "©-X-:bot",
   author: process.env.PACK_AUTHER || "☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐☠",
   packname: process.env.PACK_NAME || "Sticker by",
   botname: process.env.BOT_NAME || "-X-:bot",
