@@ -116,22 +116,22 @@ smd({ on: "status" }, async (message, text) => {
 });
 smd(
   {
-    cmdname: "theone",
-    desc: "theone",
-    react: "💀",
+    cmdname: "him",
+    desc: "him",
+    react: "🚶🏾‍♂️",
     type: "misc",
     filename: __filename,
   },
   async (m) => {
     try {
       await m.send(
-        "https://files.catbox.moe/d9xukz.jpg",
-        { caption: "*-X-:bot dey play*" },
+        "https://i.imgur.com/XkoFoW1.jpeg",
+        { caption: "*I'M HIM 😂, OF YOU DON'T AGREE THEN GO FUCK YOURSELF (☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐☠)*" },
         "img",
         m
       );
     } catch (e) {
-      m.error(`${e}\n\nCommand: platinum-v1`, e, false);
+      m.error(`${e}\n\nCommand: -X-:bot`, e, false);
     }
   }
 );
@@ -147,7 +147,7 @@ smd(
     try {
       await m.send(
         "https://files.catbox.moe/d9xukz.jpg",
-        { caption: "*Support -X-:bot OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 9133354644 Name: David promise Nigeria Show Love*" },
+        { caption: "*Support -X-:bot OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 9133354644 Name: David promise, Nigeria Show Love*" },
         "img",
         m
       );
@@ -164,8 +164,8 @@ smd(
   filename: __filename,
 },
 async (m) => {
-  const videoUrl = "https://files.catbox.moe/vq314f.jpg";
-  const caption = "what did you expect 😂";
+  const videoUrl = "https://i.imgur.com/4oYa07J.jpeg";
+  const caption = "I'm just a chill guy 🙂";
 
   try {
     await m.sendMessage(m.from, {
@@ -225,12 +225,12 @@ smd(
     cmdname: "lili",
     desc: "Send a video to Luna",
     type: "fun",
-    react: "🎥",
+    react: "🥵",
     filename: __filename,
   },
   async (m) => {
-    const videoUrl = "https://i.imgur.com/KNWskFJ.mp4"; // Updated URL
-    const caption = "last time sha! Do you like it?"; // Updated caption
+    const videoUrl = "https://i.imgur.com/eWjxz3I.mp4"; // Updated URL
+    const caption = "give your life to Christ, ODE 😂"; // Updated caption
 
     try {
       await m.sendMessage(m.from, {
@@ -246,8 +246,8 @@ smd(
 smd(
   {
     cmdname: "foru",
-    desc: "Sends an image with the caption *This one is for my bby🥹, you know yourself sweetheart'",
-    react: "👑",
+    desc: "Sends an image with the caption *☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐, the one 🎶'",
+    react: "💌",
     type: "misc",
     filename: __filename,
   },
@@ -255,7 +255,7 @@ smd(
     try {
       await m.send(
         "https://i.imgur.com/7psUg8z.jpeg", // The image URL
-        { caption: "*IT IS I ☠᭄𝕯𝖆𝖛𝖎𝖉✰࿐*" }, // The caption
+        { caption: "*THIS IS FOR YOU BBY🥹, YOU SHA KNOW YOURSELF 🚶🏾‍♂️*" }, // The caption
         "img", // The message type
         m // The message object
       );
