@@ -48,10 +48,10 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Platinum-v1 is fetching the results...");
+      await m.send("-X-:bot is fetching the results...");
 
       // Define the API URL for fetching search results
-      const apiUrl = `https://giftedapis.us.kg/api/search/xnxxsearch?query=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;
+      const apiUrl = `https://apis.ibrahimadams.us.kg//api/search/xnxxsearch?query=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -105,7 +105,7 @@ smd({
     const videoUrl = _0x4ec99f; // Video URL
 
     // Call the video downloader API
-    const apiUrl = `https://giftedapis.us.kg/api/download/xnxxdl?url=${encodeURIComponent(videoUrl)}&apikey=_0x5aff35,_0x187643`;
+    const apiUrl = `https://apis.ibrahimadams.us.kg//api/download/xnxxdl?url=${encodeURIComponent(videoUrl)}&apikey=_0x5aff35,_0x187643`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
