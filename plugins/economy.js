@@ -1,12 +1,12 @@
 const { groupdb,smd, getBuffer, tlang, prefix } = require('../lib')
 const Config = require('../config')
 const eco = require('discord-mongoose-economy')
-let ty = false ; 
+let ty = true ; 
 
 
   try {
     if(isMongodb){ ty =  eco.connect(mongodb);console.log("Connected with discord economy!!") }
-   } catch(e) { ty = false  }
+   } catch(e) { ty = true  }
 const sck = groupdb ;
 
 if(ty){
@@ -23,7 +23,7 @@ smd({
         let zerogroup = await sck.findOne({  id: chat,   }) || {}
         if (zerogroup?.economy == "false") return reply("*🚦Economy* is not active in current group.");
         if (!isGroup) return reply(tlang().group);
-        const daily  = await eco.daily(sender, "PLATINUM-V1", 500); //give 500 for daily, can be changed
+        const daily  = await eco.daily(sender, "-X-:bot", 500); //give 500 for daily, can be changed
         if (daily.cd) {
           return await reply(`🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`);
         } else { reply(`you claimed daily ${daily.amount} 🪙 for today🎉.`);  }
@@ -71,13 +71,13 @@ async(message,match) => {
 
    let value = match.trim();
    let k = parseInt(value)
-   const balance  = await eco.balance(user, "PLATINUM-V1")
+   const balance  = await eco.balance(user, "-X-:bot")
    switch (value) {
        case '1000':
        case '1':
        if (k > balance.wallet ) return message.reply(`*_You need to pay 🪙100 to increase bank capacity ~ 1000 sp_*`);
-         const deduct1 = await eco.deduct(user, "PLATINUM-V1", 100);
-         const add1 = eco.giveCapacity(user,"PLATINUM-V1", 1000);
+         const deduct1 = await eco.deduct(user, "-X-:bot", 100);
+         const add1 = eco.giveCapacity(user,"-X-:bot", 1000);
          return await message.reply(`*1000 🪙diamond storage has been added in ${message.senderName} bank*`)
 
 
@@ -85,8 +85,8 @@ async(message,match) => {
        case '100000':
        case '2':
        if (k < balance.wallet) return message.reply(`*You need to pay 🪙1000 to increase bank capacity ~ 100000 sp*`);
-         const deduct2 = await eco.deduct(user,"PLATINUM-V1", 1000);
-         const add2 = eco.giveCapacity(user, "PLATINUM-V1", 100000);
+         const deduct2 = await eco.deduct(user,"-X-:bot", 1000);
+         const add2 = eco.giveCapacity(user, "-X-:bot", 100000);
          return await message.reply(`*100000 🪙diamond storage has been added in ${message.pushName} bank*`)
 
 
@@ -95,8 +95,8 @@ async(message,match) => {
        case '10000000':
        case '3':
        if (k < balance.wallet) return message.reply(`You need to pay 🪙10000 to increase bank capacity ~ 1000 sp`);
-          const deduct3 = await eco.deduct(user, "PLATINUM-V1", 10000);
-          const add3 = eco.giveCapacity(user, "PLATINUM-V1", 10000000);
+          const deduct3 = await eco.deduct(user, "-X-:bot", 10000);
+          const add3 = eco.giveCapacity(user, "-X-:bot", 10000000);
           return await message.reply(`*10000000 🪙diamond storage has been added in ${message.pushName}\'s bank*`)
 
 
@@ -287,7 +287,7 @@ async(message,match) => {
        case 'rob':
      const deduff = Math.floor(Math.random() * 1000)	    
          await eco.deduct(user2, "Asta", deduff);
-         await eco.give(message.sender, "Asta", deduff);
+         await eco.give(message.sender, "-X-:bot", deduff);
          await message.reply(`*🤑 Robbery operation done successfully.🗡️*\nYou ran with ${deduff} amount in your wallet.`)
          ////message.react('💀')
              break
@@ -324,7 +324,7 @@ await message.reply('*What are you trying to do👀*.')
        const query = match.trim();
        const withdraw = await eco.withdraw(user, "Asta", query);
        if(withdraw.noten) return message.reply('*🏧 Insufficient fund in bank🫤*'); //if user states more than whats in his wallet
-       const add = eco.give(user,"Asta", query);
+       const add = eco.give(user,"-X-:bot", query);
        message.reply(`*🏧 ALERT* \n _🪙${withdraw.amount} has been withdrawn from your wallet💰._`)
        }catch(e){message.error(`${e}\n\ncommand: withdraw`,e)}
    }
@@ -344,13 +344,13 @@ await message.reply('*What are you trying to do👀*.')
        let mongoschemas = zerogroup.economy || "false";
        if (mongoschemas == "false") return message.reply("*🚦Economy* is not active in current group.");
        const user = message.sender
-   //	if(message.chat!=="120363043857093839@g.us") return message.reply('This is not a economy group.')
+   //	if(message.chat!=="120363213714528457@g.us") return message.reply('This is not a economy group.')
        var texts = match.split(" ");
     var opp = texts[1];// your value
     var value = texts[0].toLowerCase();
     var gg = parseInt(value)
 ///.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-    const balance = await eco.balance(user, "Asta");
+    const balance = await eco.balance(user, "-X-:bot");
     const g = (balance.wallet) > parseInt(value)
     const k = 50
     const a = (k) > parseInt(value)
@@ -362,7 +362,7 @@ await message.reply('*What are you trying to do👀*.')
    else if (opp==='down'){  hjkl = 'https://github.com/SecktorBot/Brandimages/blob/main/Nezuko/downr.webp?raw=true'    }
    else{   message.reply(`Please provide direction(left,right,up,down).\nEg:- ${prefix}gamble 200 left`)  }
   let media = await getBuffer(hjkl)
-  message.reply(media,{packname:"Asta",author:'Economy'},"sticker")
+  message.reply(media,{packname:"-X-:bot",author:'Economy'},"sticker")
     const f = ["up", "right", "left", "down", "up", "left", "down", "right", "up", "down", "right", "left"]
     const r = f[Math.floor(Math.random () * f.length)]
     if (!match) return message.reply(`Example:  ${prefix}gamble 100 direction(left,right,up,down)`);
@@ -373,13 +373,13 @@ await message.reply('*What are you trying to do👀*.')
            if (g == false) return message.reply(`*You don't have sufficient 🪙 Diamond to gamble with*`);
            if (a == true) return message.reply(`*Sorry ${message.pushName}, you can only gamble with more than 🪙50.*`);
           if ( r == opp){
-          let give = await eco.give(user , "Asta", twice);    //message.react('⭐️')
+          let give = await eco.give(user , "-X-:bot", twice);    //message.react('⭐️')
           return await message.reply(`*📈 You won 🪙${twice}*`)
    //return await Aviator.bot.sendButtonText(message.chat, `*📈 You won 🪙${twice}*`, `${Config.ownername.split(' ')[0]}-Economy \n Version: 0.0.6`, message);
 
        }
        else{
-                 let deduct = await eco.deduct(user, "Asta", texts[0]);
+                 let deduct = await eco.deduct(user, "-X-:bot", texts[0]);
 
    //message.react('🤮')
    return await message.reply(`*📉 You lost 🪙${texts[0]}*`)
@@ -487,11 +487,11 @@ if(value<=balance.wallet){
                     message.reply(`${mess5}\n\n*Small Lose -->* _🪙20_`)
            }
            else if ((f1 !== f2) && f2 == f3){
-              const give4 = eco.give(user, "Asta", 20);
+              const give4 = eco.give(user, "-X-:bot", 20);
                     message.reply(`${mess3}\n\n*Small Win -->* _🪙20_`)
            }
            else if ((f1 == f2) && (f2 == f3) && (f3 == f4)){
-              const give5 = eco.give(user, "Asta", 1000);
+              const give5 = eco.give(user, "-X-:bot", 1000);
                    message.reply(`${mess4}\n\n_🎊 JackPot --> _🪙1000_`)
            }
            else {  message.reply(`Do you understand what you are doing?`)        }
@@ -516,7 +516,7 @@ async(message) => {
    let mongoschemas = zerogroup.economy || "false";
    if (mongoschemas == "false") return message.reply("*🚦Economy* is not active in current group.");
    const kg = 100
-           const balance1  = await eco.balance(message.sender, "Asta")
+           const balance1  = await eco.balance(message.sender, "-X-:bot")
            if (kg > balance1.wallet) return message.reply(`You are going to be spinning on your wallet, you need at least 🪙100`);
    var r_ban = new Array ();
    r_ban[0] =    "1 : 2 : 3"
