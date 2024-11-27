@@ -1,55 +1,35 @@
+
+
 const moment = require('moment-timezone')
-const {fetchJson,smd, tlang,send, shazam, getBuffer, prefix, Config ,groupdb } = require("../lib")
+const {fetchJson,smd, tlang,send, getBuffer, prefix, Config ,groupdb } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
-smd(
-  {
-    pattern: "lyrics",
-    desc: "Get song details based on provided lyrics.",
-    category: "fun",
-    filename: __filename,
-  },
-  async (m) => {
-    try {
-      // Extract the lyrics query from the message
-      const query = m.text.split(' ').slice(1).join(' ');
-      if (!query) {
-        return await m.send("Please provide some lyrics to search for, e.g., `.lyrics I got this feeling inside my bones`.");
-      }
 
-      // Send a loading message
-      await m.send("Platinum-v1 is searching for the song based on your lyrics 🎶");
+   //---------------------------------------------------------------------------
+   const { shazam } = require('../lib')
+   let yts = require("secktor-pack");
+   smd({
+           pattern: "find",
+           alias :["shazam"],
+           category: "search",
+           desc: "Finds info about song",
+           filename: __filename,
+       },
+       async(message) => {
+         try{
+            let mime = message.reply_message ? message.reply_message.mtype : ''
+            if (!/audio/.test(mime)) return message.reply(`Reply audio ${prefix}find`);
+            let buff = await message.reply_message.download();
+            let data = await shazam(buff);
+            if (!data || !data.status) return message.send(data);
+            let h =`*TITLE: _${data.title}_* \n*ARTIST: _${data.artists}_*\n *ALBUM:* _${data.album}_ `
+//   *𝚁𝚎𝚕𝚎𝚊𝚜𝚎:* _${data.release_date}
+           await message.bot.sendUi(message.jid, { caption: h,  },{quoted : message} , "text",'true' );
+       }catch(e){return await message.error(`${e}\n\n command: find`,e,`*_Didn't get any results, Sorry!_*`) }
+})
+    //------------------------------------------------------------------------------------
 
-      // Define the API URL for fetching song details
-      const apiUrl = `https://widipe.com/findsong?text=${encodeURIComponent(query)}`;
-      const response = await fetch(apiUrl);
-
-      if (!response.ok) {
-        return await m.send(
-          `*_Error: ${response.status} ${response.statusText}_*`
-        );
-      }
-
-      // Get the result from the API response
-      const data = await response.json();
-
-      if (!data.status || !data.result || !data.result.title) {
-        return await m.send(`No song found matching the lyrics: "${query}".`);
-      }
-
-      // Destructure the result to extract relevant fields
-      const { title, album, lyrics } = data.result;
-      const albumInfo = album ? `Album: ${album}` : "Album: N/A";
-      const message = `*Song Found:*\n\n*Title:* ${title}\n*${albumInfo}*\n\n*Lyrics:*\n\n${lyrics}`;
-
-      // Send the final response with song details
-      await m.send(message);
-    } catch (e) {
-      await m.error(`${e}\n\ncommand: lyrics`, e);
-    }
-  }
-);
 smd({
    pattern: "github",
    category: "search",
@@ -60,7 +40,7 @@ async(message, match) => {
  try{
 
    message.react("🔍")
-         if (!match) return message.reply(`Give me a user name like ${prefix}github Astropeda`)
+         if (!match) return message.reply(`Give me a user name like ${prefix}github SuhailTechInfo`)
 
          const { data } = await axios(`https://api.github.com/users/${match}`)
    if(!data) return await message.send(`*_Didn't get any results, Provide valid user name!_*`)
@@ -105,6 +85,32 @@ async(m) => {
 
 
    })
+//------------------------------------------------------------------------------------
+
+
+
+
+
+
+    //---------------------------------------------------------------------------
+smd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
+
+    async(message, text,{cmdName}) => {
+    if (!text) return message.reply(`*_Uhh please, give me song name_*\n*_Example ${prefix+cmdName} blue eyes punjabi_*`);
+    try {
+      const res = await ( await fetch(`https://inrl-web.onrender.com/api/lyrics?text=${text}`) ).json();
+      if(!res.status) return message.send("*Please Provide valid name!!!*");
+      if(!res.result) return message.send("*There's a problem, try again later!*");
+      const { thumb,lyrics,title,artist } = res.result, tbl= "```", tcl ="*", tdl = "_*", contextInfo = { externalAdReply: { ...(await message.bot.contextInfo("𝗦𝗨𝗛𝗔𝗜𝗟-𝗠𝗗",`Lyrics-${text}`))} }
+  await send(message, `*𝚃𝚒𝚝𝚕𝚎:* ${title}\n*𝙰𝚛𝚝𝚒𝚜𝚝:* ${artist} \n${tbl}${lyrics}${tbl} `,{contextInfo  : contextInfo },"");
+
+}catch(e){return await message.error(`${e}\n\n command: ${cmdName}`,e,`*_Didn't get any lyrics, Sorry!_*`) }
+
+
+
+
+
+})
 
 
     //---------------------------------------------------------------------------
@@ -117,7 +123,6 @@ smd({
         },
         async(message, match) => {
           try{
-             message.react("🔍")
             if (!match) return message.reply(`_Name a Series or movie ${tlang().greet}._`);
             let {data} = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${match}&plot=full`);
             if(!data || data.cod == '404') return await message.reply(`*_Please provide valid country name!_*`)
@@ -155,8 +160,7 @@ smd({
         },
         async(message, text) => {
           try{
-
-            if (!text) return message.reply(`*_Give me city name, ${message.isCreator ? "Master" : "Idiot"}!!_*`);
+            if (!text) return message.reply(`*_Give me city name, ${message.isCreator ? "Buddy" : "Idiot"}!!_*`);
             let {data} = await axios.get( `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
             if(!data || data.cod === '404') return await message.reply(`*_Please provide valid city name!_*`)
             let textw = `*🌟Weather of  ${text}*\n\n`;
@@ -270,14 +274,14 @@ smd({
         },
         async(message, text) => {
           try{
-            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google Queen Anita._*`);
+            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google Suhail Md._*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
                 let msg= `Google Search From : ${text} \n\n`;
                 for (let g of res) {
-                    msg+= `➣ *Title : ${g.title}*\n`;
-                    msg+= `➣ *Description :* ${g.snippet}\n`;
-                    msg+= `➣ *Link :* _${g.link}_\n\n────────────────────────\n\n`;
+                    msg+= `➣ Title : ${g.title}\n`;
+                    msg+= `➣ Description : ${g.snippet}\n`;
+                    msg+= `➣ Link : ${g.link}\n\n────────────────────────\n\n`;
                 }
 
                 return message.reply(msg);
@@ -286,133 +290,6 @@ smd({
 
         }
     )
-
-
-
-// let downImages = async(query="",safe="on")=>{
-//     if(!query) throw "need search query"
-// const gimg_api = async(query)=>{
-//     let { data } = await axios(`${api_smd}/api/gimg?query=${encodeURIComponent(query)}` )
-//     if(data && data.status && Array.isArray(data.result) && data.result.length > 0) return data.result
-//     else return false
-// }
-// const bing_api = async(query)=>{
-//     let { data } = await axios(`${api_smd}/api/bingimg?query=${encodeURIComponent(query)}` )
-//     if(data && data.status && Array.isArray(data.result) && data.result.length > 0) return data.result
-//     else return false
-// }
-// const pkg_api = async(query)=>{
-//     let data = await gis(query, { query: { safe },
-//         userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
-//       },)
-//     if(data && Array.isArray(data) && data.length > 0) return data
-//     else return false
-// }
- 
-// let func_Img = [pkg_api,gimg_api,bing_api]
-// let res = false
-// for(i=0;i<func_Img.length;i++)
-// {
-//     try{
-//         res = await func_Img[i](query)
-//         if(res && res.length >0) break;
-//     }catch(e){}
-// }
-// return res
-
-// }
-
-
-
-const downloadImages = async (query = "", safe = "on") => {
-    if (!query) throw "need search query";
-
-    // Function to fetch images from the gimg API
-    const gimg_api = async (query) => {
-        try {
-            let { data } = await axios.get(`${api_smd}/api/gimg?query=${encodeURIComponent(query)}`);
-            if (data && data.status && Array.isArray(data.result) && data.result.length > 0) {
-                return data.result;
-            }
-            return false;
-        } catch (error) {
-            console.error("Error fetching images from gimg smd-api-1.vercel.app:", error);
-            return false;
-        }
-    };
-
-    // Function to fetch images from the bingimg API
-    const bing_api = async (query) => {
-        try {
-            let { data } = await axios.get(`${api_smd}/api/bingimg?query=${encodeURIComponent(query)}`);
-            if (data && data.status && Array.isArray(data.result) && data.result.length > 0) {
-                return data.result;
-            }
-            return false;
-        } catch (error) {
-            console.error("Error fetching images from bingimg (smd-api-1.vercel.app) API:", error);
-            return false;
-        }
-    };
-
-    // Function to fetch images using the g-i-s package (Google Images)
-    const pkg_api = async (query) => {
-        try {
-            let data = await gis(query, {
-                query: { safe },
-                userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
-            });
-            if (data && Array.isArray(data) && data.length > 0) {
-                return data;
-            }
-            return false;
-        } catch (error) {
-            console.error("Error fetching images from Google Images:", error);
-            return false;
-        }
-    };
-
-    // Array of functions to fetch images from different APIs
-    let func_Img = [pkg_api, gimg_api, bing_api];
-
-    // Iterate over the functions and try fetching images
-    let res = false;
-    for (let i = 0; i < func_Img.length; i++) {
-        try {
-            res = await func_Img[i](query);
-            if (res && res.length > 0) break; // If images are found, break the loop
-        } catch (e) {
-            console.error("Error fetching images:", e);
-        }
-    }
-
-    return res;
-};
-
-// Example usage
-// downImages("your_query")
-//     .then(images => {
-//         console.log("Images:", images);
-//     })
-//     .catch(error => {
-//         console.error("Error:", error);
-//     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     //---------------------------------------------------------------------------
@@ -430,41 +307,26 @@ try{
    if (!text) return message.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
    
    let name1 = text.split("|")[0] || text
-   let name2 = text.split("|")[1] || 5
+   let name2 = text.split("|")[1] || `5`
 
 
     let nn = parseInt(name2) || 5
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let Group = await groupdb.findOne({ id: message.chat })
+    let safe = Group.nsfw == "true" ? "off" : "on"
 try{
-    // let Group = await groupdb.findOne({ id: message.chat }) 
-    // let safe = Group.nsfw === "true" ? "off" : "on" 
+    let n = await gis(name1, { query: { safe: safe },
+        userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+      },)
+console.log("images results : " , n)
 
-    // let n = await gis(name1, { query: { safe },
-    //     userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
-    //   },)
-// console.log("images results : " , n) 
-
-let n = await downloadImages(name1,"off")
-if(n && n[0]){
+    if(n && n[0]){
     nn = n && n.length > nn ? nn : n.length 
-   await message.reply(`*_Sending images of '${name1}' in chat!_*`)
+   message.reply(`*_Sending images of '${name1}' in chat!_*`)
     for (let i = 0; i < nn; i++) {
         try{
-            let random = Math.floor(Math.random() * n.length)
-            message.bot.sendFromUrl(message.jid ,n[random].url || n[random],"",message,{},"image" )   
-            n.splice(random, 1);
+        let random = Math.floor(Math.random() * n.length)
+        message.bot.sendFromUrl(message.jid ,n[random].url,"",message,{},"image" )   
+        n.splice(random, 1);
     }catch {}
     }
     return ;
@@ -563,9 +425,9 @@ smd({
         filename: __filename,
     },
     async(message, text) => {
- if(!text) return await message.reply('Give Me Number without + sign. Example: .iswa 234902786xx')
+ if(!text) return await message.reply('Give Me Number without + sign. Example: .iswa 9231844741xx')
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return message.reply(`*You did not add x*\nExample: iswa 234902786xx  \n ${Config.caption}`)
+        if (!inputnumber.includes('x')) return message.reply(`*You did not add x*\nExample: iswa 9231844741xx  \n ${Config.caption}`)
         message.reply(`*Searching for WhatsApp account in given range...* \n ${Config.caption}`)
 
         function countInstances(string, word) {  return string.split(word).length - 1; }
@@ -599,7 +461,7 @@ smd({
                   try { var anu1 = await message.bot.fetchStatus(anu[0].jid); } 
                   catch { var anu1 = '401' ; }
                   if (anu1 == '401' || anu1.status.length == 0) { nobio += `wa.me/${anu[0].jid.split("@")[0]}\n` ; } 
-                  else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz(timezone).format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
+                  else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Karachi').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
             } catch { nowhatsapp += ` ≛ ${number0}${i}${number1}\n`; }
         }
         return await message.reply(`${text}${nobio}${nowhatsapp}`)
@@ -616,32 +478,9 @@ smd({
         filename: __filename,
     },
     async(message, text) => {
-if(!text) return await message.reply('Give Me Number without + sign. Example: .nowa 234902786xx')
+if(!text) return await message.reply('Give Me Number without + sign. Example: .nowa 9231844741xx')
 const inputNumber = text.split(" ")[0]
-if (!inputNumber.includes('x')) return message.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 234902786xx  \n ${Config.caption}`)
+if (!inputNumber.includes('x')) return message.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${Config.caption}`)
 message.reply(`*Searching for WhatsApp account in the given range...*\n${Config.caption}`);
 function countInstances(string, word) { return string.split(word).length - 1; }
-const number0 = inputNumber.split('x')[0];
-const number1 = inputNumber.split('x').slice(-1)[0] || '';
-const randomLength = countInstances(inputNumber, 'x');
-const randomxx = [10, 100, 1000][randomLength - 1] || 0;
-let nobio = `\n*『 WhatsApp Account With No Bio』* \n`;
- let nobios='';
-let nowhatsapp = `*『 Numbers With No WhatsApp Account 』* \n\n`;
-for (let i = 0; i < randomxx; i++) 
-{
-    const nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const status = nu.slice(0, randomLength).map(() => nu[Math.floor(Math.random() * nu.length)]).join('');
-    const random = `${status}${nu[Math.floor(Math.random() * nu.length)]}`.slice(0, randomLength);
-    const anu = await message.bot.onWhatsApp(`${number0}${i}${number1}`);
-    const anuu = anu.length !== 0 ? anu : false;
-    try 
-    {
-         const anu1 = await message.bot.fetchStatus(anu[0].jid);
-         if (anu1 === '401' || anu1.status.length === 0) {  nobios += `wa.me/${anu[0].jid.split("@")[0]}\n`; } 
-    } catch { nowhatsapp += ` ≛ ${number0}${i}${number1}\n`;  }
-}
-if(!nobios){ nobio = ''; } else {nobio += nobios+'\n\n' ;}
-return await message.reply(`${nobio}${nowhatsapp}${Config.caption}`);
-
-})
+const number0 
