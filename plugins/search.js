@@ -33,14 +33,14 @@ const fetch = require('node-fetch')
 smd({
    pattern: "github",
    category: "search",
-   desc: "Finds info about song",
+   desc: "Finds info about user",
    filename: __filename,
 },
 async(message, match) => {
  try{
 
    message.react("🔍")
-         if (!match) return message.reply(`Give me a user name like ${prefix}github SuhailTechInfo`)
+         if (!match) return message.reply(`Give me a user name like ${prefix}github Mek-d1`)
 
          const { data } = await axios(`https://api.github.com/users/${match}`)
    if(!data) return await message.send(`*_Didn't get any results, Provide valid user name!_*`)
@@ -274,7 +274,7 @@ smd({
         },
         async(message, text) => {
           try{
-            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google Suhail Md._*`);
+            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google -X-:bot._*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
                 let msg= `Google Search From : ${text} \n\n`;
@@ -322,7 +322,7 @@ console.log("images results : " , n)
     if(n && n[0]){
     nn = n && n.length > nn ? nn : n.length 
    message.reply(`*_Sending images of '${name1}' in chat!_*`)
-    for (let i = 0; i < nn; i++) {
+    for (let i = 0; i  nn; i++) {
         try{
         let random = Math.floor(Math.random() * n.length)
         message.bot.sendFromUrl(message.jid ,n[random].url,"",message,{},"image" )   
