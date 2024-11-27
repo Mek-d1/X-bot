@@ -168,7 +168,7 @@ smd({
     try {
       let {
         key: _0x2d7cf6
-      } = await _0x4e7c63.send("Counting... 0", {}, "platinum-v1", _0x4e7c63);
+      } = await _0x4e7c63.send("Counting... 0", {}, "-X-:bot", _0x4e7c63);
       for (let _0x16a10f = 0; _0x16a10f <= _0x4cf8ed; _0x16a10f++) {
         if (_0x16a10f % 15 === 0) {
           await _0x4e7c63.send("Counting... " + _0x16a10f, {
@@ -182,14 +182,14 @@ smd({
       }
       await _0x4e7c63.send("*Feature Counting Done!*", {
         edit: _0x2d7cf6
-      }, "platinum-v1", _0x4e7c63);
+      }, "-X-:bot", _0x4e7c63);
     } catch (_0x28ce7e) {}
-    let _0x50f17a = " *乂 Platinum-V1 - ＢＯＴ ＦＥＡＴＵＲＥ*\n\n\n  ◦ _Total Features ➪ " + _0x4cf8ed + "_\n  \n*◦ BOT FEATURES*\n\n      Plugins ➪ " + Object.values(_0x4de967.commands).filter(_0x54d4bf => _0x54d4bf.pattern).length + "_\n      _Msg Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x2376a3 => _0x2376a3.on).length + "_\n      _Call Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x54a19b => _0x54a19b.call).length + "_\n      _Group Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x35381c => _0x35381c.group).length + "_\n  \n\n" + Config.caption;
+    let _0x50f17a = " *乂 -X-:bot - ＢＯＴ ＦＥＡＴＵＲＥ*\n\n\n  ◦ _Total Features ➪ " + _0x4cf8ed + "_\n  \n*◦ BOT FEATURES*\n\n      Plugins ➪ " + Object.values(_0x4de967.commands).filter(_0x54d4bf => _0x54d4bf.pattern).length + "_\n      _Msg Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x2376a3 => _0x2376a3.on).length + "_\n      _Call Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x54a19b => _0x54a19b.call).length + "_\n      _Group Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x35381c => _0x35381c.group).length + "_\n  \n\n" + Config.caption;
     await _0x4e7c63.bot.relayMessage(_0x4e7c63.chat, {
       requestPaymentMessage: {
         currencyCodeIso4217: "PK",
         amount1000: _0x4cf8ed * 1000,
-        requestFrom: "2348039607375@s.whatsapp.net",
+        requestFrom: "2349133354644@s.whatsapp.net",
         noteMessage: {
           extendedTextMessage: {
             text: _0x50f17a,
@@ -269,7 +269,7 @@ smd({
   let _0x3b31ed = "Character of @" + _0x32c078.split("@")[0] + "  is *" + _0x2f5d93 + "* 🔥⚡";
   _0x2a677e.send(_0x3b31ed, {
     mentions: [_0x32c078]
-  }, "platinum-v1", _0x2a677e);
+  }, "-X-:bot", _0x2a677e);
 });
 smd({
   cmdname: "poetry",
@@ -397,7 +397,7 @@ smd({
   try {
     let _0x587b99 = _0x41dfb5.split(" ")[0].trim();
     if (!_0x587b99) {
-      return await _0x4cdec8.reply("*Need URL! Use " + prefix + "ss https://github.com/JUPITERBOLD05/PLATINUM-V1*");
+      return await _0x4cdec8.reply("*Need URL! Use " + prefix + "ss https://github.com/Mek-d1/PLATINUM-V1*");
     }
     let _0x358290 = await ssweb(_0x587b99);
     if (_0x358290 && _0x358290.status == "200") {
