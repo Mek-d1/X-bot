@@ -39,7 +39,7 @@ smd(
     filename: __filename,
   },
   async (message) => {
-    const SupportMsg = `ERRORS WITH REPO COMMAND THIS IS NEW REPO \n\n *REPO:*https://github.com//QUEEN-PLATINUM-V1\n\n ${Config.botname} *WORKS*`;
+    const SupportMsg = `ERRORS WITH REPO COMMAND THIS IS NEW REPO \n\n *REPO:*https://github.com/Mek-d1/Platinum-V1\n\n ${Config.botname} *WORKS*`;
 
     const contextInfo = {
       forwardingScore: 999,
@@ -150,7 +150,7 @@ smd(
    filename: __filename
  }, async _0x17bb63 => {
    try {
-     let _0x12a593 = "*PLATINUM-V1 CURRENTLY ACTIVE!*";
+     let _0x12a593 = "*-X-:bot CURRENTLY ACTIVE!*";
      await _0x17bb63.reply(_0x12a593, {
        contextInfo: {
          externalAdReply: {
