@@ -931,7 +931,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://api.neoxr.eu/run/QmxhY2tib3ggQUk=?q=${encodeURIComponent(query)}&apikey=MnwNxu,_0x187643`;
+      const apiUrl = `https://api.neoxr.eu/api/blackbox?q=${encodeURIComponent(query)}&apikey=MnwNxu`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
