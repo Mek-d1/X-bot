@@ -20,40 +20,29 @@ smd(
   },
   async (m) => {
     try {
-      // Extract the query from the message
-      const query = m.text.split(' ').slice(1).join(' ');
-      if (!query) {
-        return await m.send("Please provide a query, e.g., `.gpt What is life?`.");
-      }
+        
+        const response = await fetch(`https://www.samirxpikachu.run.place/ArcticFL?prompt=${text}`);
 
-      // Send a loading message
-      await m.send("Chill your request is being processed •°•° 🤔");
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-      // Define the API URL
-      const apiUrl = `https://www.samirxpikachu.run.place/ArcticFL?prompt=${encodeURIComponent(query)}`;
-      const response = await fetch(apiUrl);
+       
+        const arrayBuffer = await response.arrayBuffer();
+        
+        
+        const buffer = Buffer.from(arrayBuffer);
 
-      if (!response.ok) {
-        return await m.send(
-          `*_Error: ${response.status} ${response.statusText}_*`
-        );
-      }
+        
+        await client.sendMessage(m.chat, {
+            image: buffer,
+            caption: `Downloaded by ${botname}`
+        }, { quoted: m });
 
-      // Wait for 2 seconds
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      // Get the result from the API response
-      const data = await response.json();
-      const resultText = data.result; // Extract the text from the result part
-      const message = `*Response:* \n\n${resultText}`;
-
-      // Send the final response
-      await m.send(message);
     } catch (e) {
-      await m.error(`${e}\n\ncommand: gpt`, e);
+        m.reply("An error occurred. API might be down\n" + e);
     }
-  }
-);
+};
 smd(
   {
     pattern: "bing",
