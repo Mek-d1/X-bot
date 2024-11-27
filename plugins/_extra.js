@@ -99,7 +99,7 @@ smd({
       return await _0x7587f6.reply("_Reply to an image/video message!_");
     }
     if (!_0x11eeb1) {
-      return await _0x7587f6.reply("_Need fileName, Example: document platinum-v1 | caption_");
+      return await _0x7587f6.reply("_Need fileName, Example: document -X-:bot | caption_");
     }
     let _0x1bfcf5 = await _0x7587f6.bot.downloadAndSaveMediaMessage(_0x49db20);
     let _0x3f6d77 = _0x11eeb1.includes(":") ? ":" : _0x11eeb1.includes(";") ? ";" : "|";
@@ -173,11 +173,11 @@ smd({
         if (_0x16a10f % 15 === 0) {
           await _0x4e7c63.send("Counting... " + _0x16a10f, {
             edit: _0x2d7cf6
-          }, "platinum-v1", _0x4e7c63);
+          }, "-X-:bot", _0x4e7c63);
         } else if (_0x4cf8ed - _0x16a10f < 10) {
           await _0x4e7c63.send("Counting... " + _0x16a10f, {
             edit: _0x2d7cf6
-          }, "platinum-v1", _0x4e7c63);
+          }, "-X-:bot", _0x4e7c63);
         }
       }
       await _0x4e7c63.send("*Feature Counting Done!*", {
@@ -225,7 +225,7 @@ smd(
       // Send loading message
       await m.send("🌀 _Obfuscating your code... Please wait._ 🌀");
 
-      const apiUrl = `https://giftedapis.us.kg/api/tools/encrypt?code=${encodeURIComponent(code)}&apikey=_0x5aff35,_0x187643`;
+      const apiUrl = `https://apis.ibrahimadams.us.kg//api/tools/encrypt?code=${encodeURIComponent(code)}&apikey=_0x5aff35,_0x187643`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
