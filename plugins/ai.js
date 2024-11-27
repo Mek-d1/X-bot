@@ -931,7 +931,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://giftedapis.us.kg/api/ai/blackbox?q=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;
+      const apiUrl = `https://api.neoxr.eu/run/QmxhY2tib3ggQUk=?q=${encodeURIComponent(query)}&apikey=MnwNxu,_0x187643`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
