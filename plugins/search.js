@@ -483,4 +483,28 @@ const inputNumber = text.split(" ")[0]
 if (!inputNumber.includes('x')) return message.reply(`*You did not add x in number.*\nExample: ${prefix}nowa 9231844741xx  \n ${Config.caption}`)
 message.reply(`*Searching for WhatsApp account in the given range...*\n${Config.caption}`);
 function countInstances(string, word) { return string.split(word).length - 1; }
-const number0 
+const number0 = inputNumber.split('x')[0];
+const number1 = inputNumber.split('x').slice(-1)[0] || '';
+const randomLength = countInstances(inputNumber, 'x');
+const randomxx = [10, 100, 1000][randomLength - 1] || 0;
+let nobio = `\n*『 WhatsApp Account With No Bio』* \n`;
+ let nobios='';
+let nowhatsapp = `*『 Numbers With No WhatsApp Account 』* \n\n`;
+for (let i = 0; i < randomxx; i++) 
+{
+    const nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const status = nu.slice(0, randomLength).map(() => nu[Math.floor(Math.random() * nu.length)]).join('');
+    const random = `${status}${nu[Math.floor(Math.random() * nu.length)]}`.slice(0, randomLength);
+    const anu = await message.bot.onWhatsApp(`${number0}${i}${number1}`);
+    const anuu = anu.length !== 0 ? anu : false;
+    try 
+    {
+         const anu1 = await message.bot.fetchStatus(anu[0].jid);
+         if (anu1 === '401' || anu1.status.length === 0) {  nobios += `wa.me/${anu[0].jid.split("@")[0]}\n`; } 
+    } catch { nowhatsapp += ` ≛ ${number0}${i}${number1}\n`;  }
+}
+if(!nobios){ nobio = ''; } else {nobio += nobios+'\n\n' ;}
+return await message.reply(`${nobio}${nowhatsapp}${Config.caption}`);
+
+})
+
