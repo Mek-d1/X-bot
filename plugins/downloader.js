@@ -33,7 +33,7 @@ const path = require ("path");
         return await m.send("*_Please provide a WhatsApp channel URL!_*");
       }
 
-      const apiUrl = `https://itzpire.com/stalk/whatsapp-channel?url=${encodeURIComponent(
+      const apiUrl = `https://api.giftedtech.my.id/api/stalk/wachannel?apikey=gifted&url=${encodeURIComponent(
         channelUrl
       )}`;
       const response = await axios.get(apiUrl);
@@ -81,7 +81,7 @@ smd(
         return await m.send("*_Please provide an Instagram username!_*");
       }
 
-      const apiUrl = `https://itzpire.com/stalk/instagram?username=${encodeURIComponent(
+      const apiUrl = `https://api.giftedtech.my.id/api/stalk/igstalk?apikey=gifted&username=${encodeURIComponent(
         username
       )}`;
       const response = await axios.get(apiUrl);
@@ -135,7 +135,7 @@ smd(
         return await m.send("*_Please provide a GitHub username!_*");
       }
 
-      const apiUrl = `https://itzpire.com/stalk/github-user?username=${encodeURIComponent(
+      const apiUrl = `https://api.giftedtech.my.id/api/stalk/gitstalk?apikey=gifted&username=${encodeURIComponent(
         username
       )}`;
       const response = await axios.get(apiUrl);
@@ -198,7 +198,7 @@ smd(
      let _0x27aa70 = _0x2a4fb1.split("/addstickers/")[1];
      let {
        result: _0x4a601d
-     } = await axios.getJson("https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=" + encodeURIComponent(_0x27aa70) + " ");
+     } = await axios.getJson("https://api.giftedtech.my.id/api/download/tgs?apikey=gifted&url= +encodeURIComponent(_0x27aa70) + "");
      let _0x54b45a = _0x155c01.split("|")[1] || "";
      let _0x56bec3 = "Total stickers: " + _0x4a601d.stickers.length + "\n*Estimated complete in:* " + _0x4a601d.stickers.length * 1.5 + " seconds\nKeep in mind that there is a chance of a ban if used frequently";
      if (_0x4a601d.is_animated) {
@@ -233,7 +233,7 @@ smd(
          let _0x13ee38 = await getBuffer(_0x3c2608);
          await _0x19df48.reply(_0x13ee38, {
            packname: Config.packname,
-           author: "Platinum-V1-Md"
+           author: "-X-:bot"
          }, "sticker");
        } else {
          await _0x19df48.bot.sendMessage(_0x19df48.chat, {
@@ -262,7 +262,7 @@ smd(
       return await m.send("*_Please provide an Instagram URL!_*");
     }
 
-    const apiUrl = `https://api.neoxr.eu/api/insta?url=${encodeURIComponent(url)}&apikey=mcandy`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/instadl?apikey=gifted&type=video&url=${encodeURIComponent(url)}&apikey=gifted`;
     const response = await fetch(apiUrl);
     
     if (!response.ok) {
@@ -331,7 +331,7 @@ smd(
          } catch {}
        }
      } catch (e) {
-       await m.error(`${e}\n\ncommand: insta`, e);
+       await m.error(`${e}\n\ncommand: wikimedia`, e);
      }
    }
  );
@@ -351,7 +351,7 @@ smd({
     const videoUrl = _0x4ec99f; // Facebook video URL
 
     // Call the Facebook downloader API
-    const apiUrl = `https://itzpire.com/download/facebook?url=${encodeURIComponent(videoUrl)}`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/facebook?apikey=gifted&url=${encodeURIComponent(videoUrl)}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
@@ -419,7 +419,7 @@ smd({
     const videoUrl = _0x4ec99f; // Facebook video URL
 
     // Call the Facebook downloader API
-    const apiUrl = `https://itzpire.com/download/facebook?url=${encodeURIComponent(videoUrl)}`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/facebook?apikey=gifted&url=${encodeURIComponent(videoUrl)}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
@@ -487,7 +487,7 @@ smd({
     const videoUrl = _0x4ec99f; // Facebook video URL
 
     // Call the Facebook downloader API
-    const apiUrl = `https://itzpire.com/download/facebook?url=${encodeURIComponent(videoUrl)}`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/fbdl?apikey=gifted&url=${encodeURIComponent(videoUrl)}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
@@ -613,7 +613,7 @@ smd(
    try {
      let _0x204f81 = _0x55aba2.reply_text ? _0x55aba2.reply_text : _0x56da6b;
      if (!_0x204f81) {
-       return _0x55aba2.reply("*_Example : .tts Hi,I am Platinum-V1-Md whatsapp bot._*");
+       return _0x55aba2.reply("*_Example : .tts Hi,I am -X-:bot whatsapp friend._*");
      }
      try {
        let _0x1974d5 = _0x56da6b ? _0x56da6b.split(" ")[0].toLowerCase() : "en";
@@ -676,7 +676,7 @@ smd(
      };
      let _0x4737bb = {
        audio: _0x2ba501,
-       fileName: "platinum-v1-Md tiktok Sound" + _0x19c223 + ".m4a",
+       fileName: "-X-:bot tiktok Sound" + _0x19c223 + ".m4a",
        mimetype: "audio/mpeg",
        ptt: true,
        contextInfo: _0x29fdd9
@@ -704,7 +704,7 @@ smd({
     const videoUrl = _0x4ec99f; // Facebook video URL
 
     // Call the Facebook downloader API
-    const apiUrl = `https://itzpire.com/download/tiktok?url=${encodeURIComponent(videoUrl)}`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/tiktokdlv3?apikey=gifted&url=${encodeURIComponent(videoUrl)}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
@@ -872,7 +872,7 @@ smd({
        return "" + Math[_0x2d6457(252)](Math[_0x2d6457(224)]() * 10000) + _0x5202bc;
      };
      if (!_0x45d2ef || !_0x45d2ef.includes("=") || !/http/gi[_0x38a391(216)](_0x45d2ef)) {
-       return await _0x1283e0[_0x38a391(244)]("*Use Playlist URL, Like: " + prefix + "playlist https://www.youtube.com/playlist?list=PLZeei0S6_unh-jTeWsJI1mOI6snxeHn5c*");
+       return await _0x1283e0[_0x38a391(244)]("*Use Playlist URL, Like: " + prefix + "playlist plus YouTube playlist link*");
      }
      let _0x1c2a7e = _0x45d2ef[_0x38a391(250)]("=")[1][_0x38a391(250)](" ")[0];
      console[_0x38a391(217)](_0x1c2a7e);
@@ -961,7 +961,7 @@ smd({
     const pinterestUrl = _0x4ec99f; // Pinterest URL
 
     // Call the Pinterest downloader API
-    const apiUrl = `https://itzpire.com/download/pinterest?url=${encodeURIComponent(pinterestUrl)}`;
+    const apiUrl = `https://api.giftedtech.my.id/api/download/pinterestdl?apikey=gifted&url=${encodeURIComponent(pinterestUrl)}`;
     
     const response = await axios.get(apiUrl);
     const data = response.data;
@@ -1030,7 +1030,7 @@ smd({
     const pinterestUrl = _0x13be17.trim();
 
     // Use the new API to get download links
-    const downloadApiUrl = "https://widipe.com/download/pindl?url=" + encodeURIComponent(pinterestUrl);
+    const downloadApiUrl = "https://api.giftedtech.my.id/api/download/pinterestdl?apikey=gifted&url=" + encodeURIComponent(pinterestUrl);
     
     let _0x4acf6c = 3; // Retry logic
     while (_0x4acf6c > 0) {
