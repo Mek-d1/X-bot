@@ -30,7 +30,7 @@ smd(
       await m.send("-X-:bot is thinking 🤔");
 
       // Define the API URL
-      const apiUrl = `https://api.gurusensei.workers.dev/llama?prompt=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/gpt-turbo?apikey=gifted&q=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -73,7 +73,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://itzpire.com/ai/ITzpire?q=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/gpt4-o?apikey=gifted&q=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -128,7 +128,7 @@ smd({
     }
 
     // Construct the API URL for removebg
-    const apiUrl = `https://api.remove.bg/v1.0/removebg?url=${encodeURIComponent(mediaUrl.url)}&apikey=GeuDvL3WthVqBqMcYFQyxB5E`;
+    const apiUrl = `https://api.remove.bg/v1.0/removebg?&apikey=GeuDvL3WthVqBqMcYFQyxB5E&q=${encodeURIComponent(mediaUrl.url)}&apikey=GeuDvL3WthVqBqMcYFQyxB5E`;
 
     // Fetch the response from the API
     const response = await fetch(apiUrl);
@@ -261,7 +261,7 @@ smd(
 );
 smd(
   {
-    pattern: "lumine",
+    pattern: "lumin",
     react: "📡",
     desc: "Get a response from Lumine AI based on user query.",
     category: "ai",
@@ -279,7 +279,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://www.blackbox.ai/chat/XiOyaix?model=gpt-4o?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/luminai?apikey=gifted&query=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -323,7 +323,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the new API URL
-      const apiUrl = `https://itzpire.com/ai/gemini-ai?q=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/geminiaipro?apikey=gifted&q=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -367,7 +367,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the new API URL
-      const apiUrl = `https://widipe.com/turbo?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/letmegpt?apikey=gifted&query=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -410,7 +410,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the new API URL
-      const apiUrl = `https://www.blackbox.ai/agent/ImageGenerationLV45LJp?query=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/simsimi?apikey=gifted&query=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -451,7 +451,7 @@ smd(
       }
 
       // Construct the API URL with the provided query
-      const apiUrl = `https://www.blackbox.ai/agent/ImageGenerationLV45LJp?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/sd?apikey=gifted&prompt=${encodeURIComponent(query)}`;
       
       // Fetch the response from the API
       const response = await fetch(apiUrl);
@@ -618,7 +618,7 @@ smd(
                   _0x2ecd2a.howmanyreply += 1;
                   const _0x5a2204 = _0x2acf30.text.indexOf(",");
                   let _0x3f6b59 =
-                    "*PLATINUM-V1 • ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
+                    "*-X-:bot • ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
                     _0x2ecd2a.reciever.split("@")[0] +
                     "_*\n*_Msg_Id: " +
                     _0x2ecd2a.id +
@@ -661,7 +661,7 @@ smd(
                   let _0x362db6 =
                     "*Basically, Its an Annonymous Message*\n\n_Msg_Id: " +
                     _0x2ecd2a.id +
-                    "_\n_this message sended by a chatbot_\n_User not wants to expose itself to send that msg_\n\n\n*if you wanna reply to that user,*\n*Send msg by replying to above message*\n*Type like:* reply, Type_your_Message_Here\n*Example:* reply, Can you text me from your number\n\n\n" +
+                    "_\n_this message sent by a chatbot_\n_User not wants to expose itself to send that msg_\n\n\n*if you wanna reply to that user,*\n*Send msg by replying to above message*\n*Type like:* reply, Type_your_Message_Here\n*Example:* reply, Can you text me from your number\n\n\n" +
                     Config.caption;
                   _0x2acf30.bot.sendMessage(
                     _0x2ecd2a.reciever,
@@ -778,7 +778,7 @@ smd(
         );
       } catch (_0xfcb50a) {
         await _0x165087.error(
-          _0xfcb50a + "\n\ncommand: dalle",
+          _0xfcb50a + "\n\ncommand: advertise",
           _0xfcb50a,
           "*_No responce from Server side, Sorry!!_*"
         );
@@ -931,7 +931,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://api.neoxr.eu/api/blackbox?q=${encodeURIComponent(query)}&apikey=MnwNxu`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/blackbox?apikey=gifted&q=${encodeURIComponent(query)}&apikey=gifted`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
