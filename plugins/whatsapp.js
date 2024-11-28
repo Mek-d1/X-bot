@@ -234,7 +234,7 @@ smd({
     let _0x162811 = " 「  " + Config.botname + "'s group user list  」\n\nTotal " + _0x369bef.length + " active Groups found!";
     for (let _0x37fd61 of _0x369bef) {
       let _0x10ff83 = await _0x573654.groupMetadata(_0x37fd61.id);
-      _0x162811 += "\n\nName : " + _0x10ff83.subject + " " + (_0x10ff83.owner ? "\nOwner : @" + _0x10ff83.owner.split('@')[0x0] : '') + "\nID : " + _0x37fd61.id + "\nMade : " + (_0x10ff83.creation ? moment(_0x10ff83.creation * 0x3e8).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss") : _0x10ff83.creation) + "\nMember : " + (_0x10ff83.participants.length || 0x0) + "\n\nMessages : " + _0x37fd61.unreadCount + "\nLastchat : " + moment(_0x37fd61.conversationTimestamp * 0x3e8).tz(timezone).format("DD/MM/YYYY HH:mm:ss");
+      _0x162811 += "\n\nName : " + _0x10ff83.subject + " " + (_0x10ff83.owner ? "\nOwner : @" + _0x10ff83.owner.split('@')[0x0] : '') + "\nID : " + _0x37fd61.id + "\nMade : " + (_0x10ff83.creation ? moment(_0x10ff83.creation * 0x3e8).tz("Africa/Lagos").format("DD/MM/YYYY HH:mm:ss") : _0x10ff83.creation) + "\nMember : " + (_0x10ff83.participants.length || 0x0) + "\n\nMessages : " + _0x37fd61.unreadCount + "\nLastchat : " + moment(_0x37fd61.conversationTimestamp * 0x3e8).tz(timezone).format("DD/MM/YYYY HH:mm:ss");
     }
     _0xa220f.send(_0x162811, {}, "suhail", _0xa220f);
   } catch (_0x383d75) {
@@ -252,7 +252,7 @@ cmd({
       return _0x2721c0.reply("*Please Reply to User With Name*");
     }
     if (!_0x4a39c4) {
-      return _0x2721c0.reply("Please Give Me User Name, \n *Example : " + prefix + "vcard Suhail Tech Info* ");
+      return _0x2721c0.reply("Please Give Me User Name, \n *Example : " + prefix + "vcard David Tech* ");
     }
     var _0x96de1e = _0x4a39c4.split(" ");
     if (_0x96de1e.length > 0x3) {
