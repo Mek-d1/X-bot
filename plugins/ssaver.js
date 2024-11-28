@@ -137,7 +137,7 @@ smd(
 );
 smd(
   {
-    cmdname: "donate",
+    cmdname: "aza",
     desc: "Send donation details",
     type: "misc",
     react: "💰",
@@ -146,26 +146,26 @@ smd(
   async (m) => {
     try {
       await m.send(
-        "https://files.catbox.moe/d9xukz.jpg",
+        "https://files.catbox.moe/mx0z4n.jpg",
         { caption: "*Support -X-:bot OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 9133354644 Name: David promise, Nigeria Show Love*" },
         "img",
         m
       );
     } catch (e) {
-      m.error(`${e}\n\nCommand: donate`, e, false);
+      m.error(`${e}\n\nCommand: aza`, e, false);
     }
   }
 );
  smd({
-  cmdname: "davex",
+  cmdname: "dave-x",
   desc: "Send a video to Luna",
   type: "fun",
   react: "🎥",
   filename: __filename,
 },
 async (m) => {
-  const videoUrl = "https://i.imgur.com/4oYa07J.jpeg";
-  const caption = "I'm just a chill guy 🙂";
+  const videoUrl = "https://files.catbox.moe/46jqtg.mov";
+  const caption = "love 🚀";
 
   try {
     await m.sendMessage(m.from, {
@@ -174,7 +174,7 @@ async (m) => {
       mimetype: 'video/mp4'
     });
   } catch (e) {
-    console.error(`${e}\n\nCommand: sendvideo`, e);
+    console.error(`${e}\n\nCommand: dave-x`, e);
   }
 });
 smd(
