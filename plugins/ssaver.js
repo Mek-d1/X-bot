@@ -1,7 +1,7 @@
 const { smd } = require("../lib");
 smd(
   {
-    pattern: "save",
+    pattern: "ssave",
     desc: "Save whatsapp status",
     category: "whatsapp",
     filename: __filename,
