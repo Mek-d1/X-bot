@@ -196,9 +196,9 @@ smd(
      }
      let _0x2a4fb1 = _0x155c01.split("|")[0];
      let _0x27aa70 = _0x2a4fb1.split("/addstickers/")[1];
-     let {
+let {
        result: _0x4a601d
-     } = await axios.getJson("https://api.giftedtech.my.id/api/download/tgs?apikey=gifted&url= +encodeURIComponent(_0x27aa70) + "");
+     } = await axios.getJson("https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=" + encodeURIComponent(_0x27aa70) + " ");
      let _0x54b45a = _0x155c01.split("|")[1] || "";
      let _0x56bec3 = "Total stickers: " + _0x4a601d.stickers.length + "\n*Estimated complete in:* " + _0x4a601d.stickers.length * 1.5 + " seconds\nKeep in mind that there is a chance of a ban if used frequently";
      if (_0x4a601d.is_animated) {
