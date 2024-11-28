@@ -30,7 +30,7 @@ smd(
       await m.send("-X-:bot is thinking 🤔");
 
       // Define the API URL
-      const apiUrl = `https://api.openai.com/v1/chat/completions=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.gurusensei.workers.dev/llama?prompt=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -73,7 +73,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://itzpire.com/ai/bing-ai?model=Precise&q=${encodeURIComponent(query)}`;
+      const apiUrl = `https://itzpire.com/ai/ITzpire?q=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -128,7 +128,7 @@ smd({
     }
 
     // Construct the API URL for removebg
-    const apiUrl = `https://giftedapis.us.kg/api/tools/removebg?url=${encodeURIComponent(mediaUrl.url)}&apikey=_0x5aff35,_0x187643`;
+    const apiUrl = `https://api.remove.bg/v1.0/removebg?url=${encodeURIComponent(mediaUrl.url)}&apikey=GeuDvL3WthVqBqMcYFQyxB5E`;
 
     // Fetch the response from the API
     const response = await fetch(apiUrl);
@@ -186,7 +186,7 @@ smd({
 });
 smd(
   {
-    pattern: "sd",
+    pattern: "dsgn",
     react: "🖼️", // Changed command name to 'dale6'
     desc: "Generate an AI photo from text prompt.",
     category: "ai",
@@ -201,7 +201,7 @@ smd(
       }
 
       // Construct the API URL with the provided query
-      const apiUrl = `https://widipe.com/stablediffusion?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://www.samirxpikachu.run.place/ArcticFL?prompt=${encodeURIComponent(query)}`;
       
       // Fetch the response from the API
       const response = await fetch(apiUrl);
@@ -255,7 +255,7 @@ smd(
     } catch (e) {
       // Log the error and send an error message to the user
       console.error(e);
-      await m.error(`${e}\n\ncommand: sd`, e);
+      await m.error(`${e}\n\ncommand: design`, e);
     }
   }
 );
@@ -279,7 +279,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the API URL
-      const apiUrl = `https://widipe.com/v3/gpt4?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://www.blackbox.ai/chat/XiOyaix?model=gpt-4o?text=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -323,7 +323,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the new API URL
-      const apiUrl = `https://widipe.com/gemini?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://itzpire.com/ai/gemini-ai?q=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -410,7 +410,7 @@ smd(
       await m.send("Chill your request is being processed •°•° 🤔");
 
       // Define the new API URL
-      const apiUrl = `https://widipe.com/simi?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://www.blackbox.ai/agent/ImageGenerationLV45LJp?query=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -451,7 +451,7 @@ smd(
       }
 
       // Construct the API URL with the provided query
-      const apiUrl = `https://widipe.com/v1/text2img?text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://www.blackbox.ai/agent/ImageGenerationLV45LJp?text=${encodeURIComponent(query)}`;
       
       // Fetch the response from the API
       const response = await fetch(apiUrl);
