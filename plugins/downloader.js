@@ -358,8 +358,8 @@ smd({
 
     console.log("API Response:", data); // Log the API response for debugging
 
-    if (data.status === "success" && data.data.video_sd) {
-      const videoDownloadUrl = data.data.video_sd; // Extract the video URL from the 'video_sd' field
+    if (data.success && data.result && data.result.files && data.result.files.sd) {
+      const videoDownloadUrl = data.result.files.sd; // Extract the sd-quality video URL
 
       // Download the video file
       const videoResponse = await axios({
@@ -383,7 +383,7 @@ smd({
 
       console.log(`Video saved to ${tempFilePath}`);
 
-      // Send the video file to the user in normal quality
+      // Send the video file to the user
       await _0x2c2023.bot.sendMessage(_0x2c2023.jid, {
         video: { url: tempFilePath },
         caption: 'Here is your downloaded video',
