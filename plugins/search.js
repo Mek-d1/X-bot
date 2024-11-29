@@ -128,23 +128,20 @@ async(m) => {
 smd(
   {
     pattern: "lyrics",
-    desc: "Get song details based on provided lyrics.",
-    category: "fun",
+    desc: "Get the lyrics of a song.",
+    category: "search",
     filename: __filename,
+    use: "<song_name>",
   },
-  async (m) => {
+  async (m, songName) => {
     try {
-      // Extract the lyrics query from the message
-      const query = m.text.split(' ').slice(1).join(' ');
-      if (!query) {
-        return await m.send("Please provide some lyrics to search for, e.g., `.lyrics Another love Tom Odell`.");
+      if (!songName) {
+        return await m.send("*_Please provide a song name!_*");
       }
 
-      // Send a loading message
-      await m.send("-X-:bot is looking for the lyrics please wait 🎶");
-
-      // Define the API URL for fetching song details
-      const apiUrl = `https://api.giftedtech.my.id/api/search/lyrics?apikey=gifted&query=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/search/lyrics?apikey=gifted&query=${encodeURIComponent(
+        songName
+      )}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -153,26 +150,27 @@ smd(
         );
       }
 
-      // Get the result from the API response
       const data = await response.json();
 
-      if (!data.status || !data.result || !data.result.title) {
-        return await m.send(`No song found matching the lyrics: "${query}".`);
+      if (data.status !== 200) {
+        return await m.send("*_An error occurred while fetching the data._*");
       }
 
-      // Destructure the result to extract relevant fields
-      const { title, album, lyrics } = data.result;
-      const albumInfo = album ? `Album: ${album}` : "Album: N/A";
-      const message = `*Song Found:*\n\n*Title:* ${title}\n*${albumInfo}*\n\n*Lyrics:*\n\n${lyrics}`;
+      const { artist, lyrics, title } = data.result;
 
-      // Send the final response with song details
-      await m.send(message);
+      const lyricsMessage = `
+*Song:* ${title}
+*Artist:* ${artist}
+
+${lyrics}
+`;
+
+      await m.send(lyricsMessage);
     } catch (e) {
       await m.error(`${e}\n\ncommand: lyrics`, e);
     }
   }
 );
-
 
     //---------------------------------------------------------------------------
 smd({
@@ -528,7 +526,49 @@ smd({
         return await message.reply(`${text}${nobio}${nowhatsapp}`)
 
     }
-)
+) 
+
+
+smd(
+    {
+      pattern: "zip",
+      alias: ["zipcode"],
+      desc: "Provides information about a US zip code.",
+      category: "tools",
+      use: "zip [zip_code]",
+      examples: ["zip 90001", "zip 33162"]
+    },
+    async (message, input) => {
+      const zipCode = input;
+  
+      if (!zipCode) {
+        return message.reply("Please provide a zip code.");
+      }
+  
+      try {
+        const response = await axios.get(`https://api.zippopotam.us/us/${zipCode}`);
+        const { postCode, country, countryAbbreviation, places } = response.data;
+  
+        let output = `
+  *Zip Code:* ${postCode}
+  *Country:* ${country} (${countryAbbreviation})
+  *Places:*
+  `;
+  
+        places.forEach((place, index) => {
+          output += `\n${index + 1}. ${place["place name"]}, ${place.state} (${place.latitude}, ${place.longitude})`;
+        });
+  
+        await message.send(output);
+      } catch (error) {
+        await message.error(
+          error + "\n\nCommand: zip",
+          error,
+          "Failed to retrieve zip code information."
+        );
+      }
+    }
+  )
 
 
 smd({
@@ -567,4 +607,5 @@ for (let i = 0; i < randomxx; i++)
 if(!nobios){ nobio = ''; } else {nobio += nobios+'\n\n' ;}
 return await message.reply(`${nobio}${nowhatsapp}${Config.caption}`);
 
-})
+}) 
+
