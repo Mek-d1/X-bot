@@ -19,9 +19,9 @@ const os = require("os");
 const speed = require("performance-now");
 smd(
   {
-    pattern: "-X-:bot-ai",
+    pattern: "x-bot",
     desc: "Generate an AI photo.",
-    category: "nsfw",
+    category: "ai",
     filename: __filename,
     use: "<query>",
   },
@@ -33,7 +33,7 @@ smd(
       }
 
       // Construct the API URL with the provided query
-      const apiUrl = `https://shizoapi.onrender.com/api/ai/imagine?apikey=shizo&query=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ai/text2img?apikey=gifted&prompt=${encodeURIComponent(query)}`;
       
       // Fetch the response from the API
       const response = await fetch(apiUrl);
@@ -387,7 +387,7 @@ smd({
     }
     return await _0x165087.send("*_Advertisement of your Message is Done,_* \n\n*_Message Succesfully sent to " + _0x1e111b + " chats_*\nLast_User: " + _0x5b9d27.split("@")[0] + "\nSearch_No: " + _0x4f926f + " number searched\n\n\n" + Config.caption);
   } catch (_0xfcb50a) {
-    await _0x165087.error(_0xfcb50a + "\n\ncommand: dalle", _0xfcb50a, "*_No responce from Server side, Sorry!!_*");
+    await _0x165087.error(_0xfcb50a + "\n\ncommand: advertise", _0xfcb50a, "*_No responce from Server side, Sorry!!_*");
   }
 });
 const astro_patch_AnonyMsg = {};
