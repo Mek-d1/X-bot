@@ -51,7 +51,7 @@ smd(
       await m.send("-X-:bot is fetching the results...");
 
       // Define the API URL for fetching search results
-      const apiUrl = `https://api.giftedtech.my.id/api/search/xnxxsearch?apikey=gifted&query=${encodeURIComponent(query)};
+      const apiUrl = `https://api.giftedtech.my.id/api/search/xnxxsearch?apikey=gifted&query=${encodeURIComponent(query)}`;
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
@@ -105,7 +105,7 @@ smd({
     const videoUrl = _0x4ec99f; // Video URL
 
     // Call the video downloader API
-    const apiUrl = `https://api.giftedtech.my.id/api/download/xnxxdl?apikey=gifted&url=${encodeURIComponent(videoUrl)};
+    const apiUrl = `https://api.giftedtech.my.id/api/download/xnxxdl?apikey=gifted&url=${encodeURIComponent(videoUrl)}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
