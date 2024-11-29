@@ -60,7 +60,7 @@ let ty = false ;
 
 
 
-const sck = groupdb ;
+const sck = 120363213714528457@g.us ;
 
 
 
