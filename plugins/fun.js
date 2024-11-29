@@ -281,7 +281,7 @@ smd({
    type: 'fun'
 }, async (message, match) => {
    try {
-       const response = await fetch('https://zenquotes.io/api/random');
+       const response = await fetch('https://api.giftedtech.my.id/api/fun/flirt?apikey=gifted');
        const data = await response.json();
        const messageText = `${data[0].q} — ${data[0].a}`;
        
