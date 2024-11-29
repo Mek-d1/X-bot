@@ -291,3 +291,21 @@ smd({
        await message.send('_Failed to fetch message._', { quoted: message.data });
    }
 });
+smd({
+   pattern: 'advice',
+   fromMe: false,
+   desc: 'Get a nice message',
+   type: 'fun'
+}, async (message, match) => {
+   try {
+       const response = await fetch('https://api.giftedtech.my.id/api/fun/advice?apikey=gifted');
+       const data = await response.json();
+       const messageText = `${data[0].q} — ${data[0].a}`;
+       
+       await message.send(messageText, { quoted: message.data });
+   } catch (error) {
+       console.error('Error fetching message:', error);
+       await message.send('_Failed to fetch message._', { quoted: message.data });
+   }
+});
+    
