@@ -21,7 +21,7 @@ var videotime = 2000;
 const { cmd } = require("../lib/plugins");
 
 smd({
-  'pattern': "play",
+  'pattern': "playy",
   'react': "🎵",
   'alias': ["music"],
   'desc': "Downloads audio from YouTube.",
@@ -106,7 +106,7 @@ smd({
     }
   } catch (_0x3c9fcf) {
     console.error("Caught Error:", _0x3c9fcf);
-    return _0x213b75.error(_0x3c9fcf + "\n\ncommand: play", _0x3c9fcf, "*_File not found!!_*");
+    return _0x213b75.error(_0x3c9fcf + "\n\ncommand: playy", _0x3c9fcf, "*_File not found!!_*");
   }
 });
 smd({
@@ -126,7 +126,7 @@ smd({
     const youtubeUrl = _0x13be17.trim();
 
     // Use the new API to get download links
-    const downloadApiUrl = "https://widipe.com/download/ytdl?url=" + encodeURIComponent(youtubeUrl);
+    const downloadApiUrl = "https://api.giftedtech.my.id/api/download/ytmp4?apikey=gifted&url=" + encodeURIComponent(youtubeUrl);
     
     let _0x4acf6c = 3; // Retry logic
     while (_0x4acf6c > 0) {
@@ -203,7 +203,7 @@ smd({
     const youtubeUrl = _0x13be17.trim();
 
     // Use the new API to get download links
-    const downloadApiUrl = "https://widipe.com/download/ytdl?url=" + encodeURIComponent(youtubeUrl);
+    const downloadApiUrl = "https://api.giftedtech.my.id/api/download/ytmp3?apikey=gifted&url=" + encodeURIComponent(youtubeUrl);
     
     let _0x4acf6c = 3; // Retry logic
     while (_0x4acf6c > 0) {
@@ -287,11 +287,11 @@ smd({
     let _0x4342ba = await smdBuffer(_0x4f86cb.thumbnail);
     await _0x213b75.bot.sendMessage(_0x213b75.jid, {
       'image': _0x4342ba,
-      'caption': "\n*-X-:bot • ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n*Title :* " + _0x4f86cb.title + "\n*Url :* " + _0x4f86cb.url + "\n*Description :* " + _0x4f86cb.timestamp + "\n*Views :* " + _0x4f86cb.views + "\n*Uploaded :* " + _0x4f86cb.ago + "\n*Author :* " + _0x4f86cb.author.name + "\n\n_Platinum-v1 is preparing the video..._\n"
+      'caption': "\n*-X-:bot • ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n*Title :* " + _0x4f86cb.title + "\n*Url :* " + _0x4f86cb.url + "\n*Description :* " + _0x4f86cb.timestamp + "\n*Views :* " + _0x4f86cb.views + "\n*Uploaded :* " + _0x4f86cb.ago + "\n*Author :* " + _0x4f86cb.author.name + "\n\n_-X-:bot is preparing the video..._\n"
     });
 
     // Use the new API to get download links
-    const downloadApiUrl = "https://widipe.com/download/ytdl?url=" + encodeURIComponent(_0x4f86cb.url);
+    const downloadApiUrl = "https://api.giftedtech.my.id/api/download/ytvideo?apikey=gifted&url=" + encodeURIComponent(_0x4f86cb.url);
     
     let _0x4acf6c = 3; // Retry logic
     while (_0x4acf6c > 0) {
@@ -348,6 +348,6 @@ smd({
     }
   } catch (_0x3c9fcf) {
     console.error("Caught Error:", _0x3c9fcf);
-    return _0x213b75.error(_0x3c9fcf + "\n\ncommand: playvideo", _0x3c9fcf, "*_File not found!!_*");
+    return _0x213b75.error(_0x3c9fcf + "\n\ncommand: youtubevideo", _0x3c9fcf, "*_File not found!!_*");
   }
 });
