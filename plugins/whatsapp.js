@@ -173,7 +173,7 @@ cmd({
 });
 cmd({
   'pattern': "location",
-  'desc': "Adds *readmore* in given text.",
+  'desc': "Sends *location* of a given post code.",
   'category': "whatsapp",
   'filename': __filename
 }, async (_0x4ee956, _0x22e2dc) => {
