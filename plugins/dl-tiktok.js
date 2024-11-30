@@ -28,7 +28,7 @@ let handler = async (m, { conn, args }) => {
         *Plays*: ${data.stats.playCount || 0}
         *Saves*: ${data.stats.saveCount || 0}
 
-        \`⏤͟͟͞͞ Downloader By Silva MD Bot\`
+        \`⏤͟͟͞͞ Downloader By -X-:bot\`
         `;
         
         // Send the video to the user
@@ -44,7 +44,7 @@ let handler = async (m, { conn, args }) => {
     } catch (error) {
       // Fallback: try using another API if the first one fails
       try {
-        const response = await fetch(`https://widipe.com/download/tikdl?url=${encodeURIComponent(url)}`);
+        const response = await fetch(`https://api.giftedtech.my.id/api/download/tiktokdlv3?apikey=gifted&url=${encodeURIComponent(url)}`);
         const data = await response.json();
         
         if (data.result && data.result.video) {
