@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'; // Ensure you have the node-fetch module installed
+const fetch = requir 'node-fetch';
 
 let handler = async (m, { conn, args }) => {
   const url = args[0];  // Extract URL from user input
