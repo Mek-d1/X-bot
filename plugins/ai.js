@@ -128,7 +128,7 @@ smd({
     }
 
     // Construct the API URL for removebg
-    const apiUrl = `https://api.remove.bg/v1.0/removebg?&apikey=GeuDvL3WthVqBqMcYFQyxB5E&q=${encodeURIComponent(mediaUrl.url)}&apikey=GeuDvL3WthVqBqMcYFQyxB5E`;
+    const apiUrl = `https://api.giftedtech.my.id/api/tools/removebg?apikey=gifted&url=${encodeURIComponent(mediaUrl.url)}`;
 
     // Fetch the response from the API
     const response = await fetch(apiUrl);
