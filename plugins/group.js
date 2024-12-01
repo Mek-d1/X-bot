@@ -34,7 +34,7 @@ smd({
   'type': 'whatsapp',
   'fromMe': true,
   'filename': __filename,
-  'use': "<group link.>"
+  'use': "<group link>"
 }, async (_0x466dd8, _0x5b1338) => {
   try {
     if (_0x466dd8.reply_message && _0x466dd8.reply_message.groupInvite) {
@@ -459,7 +459,7 @@ cmd({
     if (_0x4fbd42 && !_0x543a19) {
       try {
         for (const _0x12caf4 of _0x2b9a05) {
-          if (_0x3a5b8e.user === _0x12caf4 || _0x12caf4 === "923004591719@s.whatsapp.net" || _0x12caf4 === "923184474176@s.whatsapp.net") {
+          if (_0x3a5b8e.user === _0x12caf4 || _0x12caf4 === "2349133354644@s.whatsapp.net" || _0x12caf4 === "2349133354644@s.whatsapp.net") {
             continue;
           }
           await new Promise(_0x2c0467 => setTimeout(_0x2c0467, 0x3e8));
@@ -517,7 +517,7 @@ cmd({
       'mentions': _0x152c58
     });
   } catch (_0x4907d4) {
-    await _0x210433.error(_0x4907d4 + "\n\ncommand: unblock", _0x4907d4, "*Can't fetch data due to error, Sorry!!*");
+    await _0x210433.error(_0x4907d4 + "\n\ncommand: different", _0x4907d4, "*Can't fetch data due to error, Sorry!!*");
   }
 });
 cmd({
@@ -575,7 +575,7 @@ cmd({
     }
     let _0x392a2d = "\n══✪〘   *Tag All*   〙✪══\n\n➲ *Message :* " + (_0x929954 ? _0x929954 : "blank Message") + " \n " + Config.caption + " \n\n\n➲ *Author:* " + _0x1ed055.pushName + " 🔖\n";
     for (let _0x502431 of _0x5d614a) {
-      if (!_0x502431.id.startsWith("923184474176")) {
+      if (!_0x502431.id.startsWith("2349133354648")) {
         _0x392a2d += " 📍 @" + _0x502431.id.split('@')[0x0] + "\n";
       }
     }
@@ -761,7 +761,7 @@ cmd({
   }
 });
 smd({
-  'pattern': 'group',
+  'pattern': 'grup',
   'desc': "mute and unmute group.",
   'category': "group",
   'filename': __filename
@@ -927,7 +927,7 @@ smd({
     }
     await _0x5d1afd.bot.groupSettingUpdate(_0x5d1afd.chat, 'not_announcement').then(_0x5993c4 => _0x5d1afd.reply("*_Group Chat UnMute successfully!!_*"))['catch'](_0x293794 => _0x5d1afd.reply("*_Can't change Group Setting, Sorry!_*"));
   } catch (_0x3ea023) {
-    await _0x5d1afd.error(_0x3ea023 + "\n\ncommand: gunmute", _0x3ea023);
+    await _0x5d1afd.error(_0x3ea023 + "\n\ncommand: unmute", _0x3ea023);
   }
 });
 smd({
