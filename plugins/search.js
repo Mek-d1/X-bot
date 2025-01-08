@@ -2,7 +2,7 @@
 
 
 
-let Suhail_Md = "Suhail MD Whatsapp bot md"
+let X_bot = "X-bot MD Whatsapp bot md"
 
 
 const moment = require('moment-timezone')
@@ -99,56 +99,7 @@ async(m) => {
 
 
 
-    //---------------------------------------------------------------------------
-smd(
-  {
-    pattern: "lyrics",
-    desc: "Get the lyrics of a song.",
-    category: "search",
-    filename: __filename,
-    use: "<song_name>",
-  },
-  async (m, songName) => {
-    try {
-      if (!songName) {
-        return await m.send("*_Please provide a song name!_*");
-      }
-
-      const apiUrl = `https://api.giftedtech.my.id/api/search/lyrics?apikey=gifted&query=${encodeURIComponent(
-        songName
-      )}`;
-      const response = await fetch(apiUrl);
-
-      if (!response.ok) {
-        return await m.send(
-          `*_Error: ${response.status} ${response.statusText}_*`
-        );
-      }
-
-      const data = await response.json();
-
-      if (data.status.success) {
-        return await m.send("*_An error occurred while fetching the data._*");
-      }
-
-      const { Artist, Lyrics, Title } = data.result;
-
-      const lyricsMessage =`
-*Song:* ${Title}
-*Artist:* ${Artist}
-
-${Lyrics}
-`;
-
-      await m.send(lyricsMessage);
-    } catch (e) {
-      await m.error(`${e}\n\ncommand: lyrics`, e);
-    }
-  }
-);
-
-           
-
+    //--------------------------------------------------------------------------
 
     //---------------------------------------------------------------------------
 smd({
@@ -219,7 +170,7 @@ smd({
     );
 smd(
   {
-    pattern: "sing",
+    pattern: "lyrics",
     desc: "Get the lyrics of a song.",
     category: "search",
     filename: __filename,
