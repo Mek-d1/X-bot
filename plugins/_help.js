@@ -193,13 +193,13 @@ smd(
   },
   async (message) => {
     var startTime = new Date().getTime();
-    const { key } = await message.reply("-X-:bot");
+    const { key } = await message.reply("X");
 
     // Wait briefly for effect
     await new Promise((r) => setTimeout(r, 1500));
 
     var speed = new Date().getTime() - startTime;
-    await message.send(`-X-:bot: ${speed} ms ⚡`, { edit: key });
+    await message.send(`X-ʙᴏᴛ: ${speed} ms ⚡`, { edit: key });
   }
 );
 astro_patch.cmd(
